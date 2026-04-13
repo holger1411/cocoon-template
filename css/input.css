@@ -18,39 +18,21 @@
   font-display: swap;
 }
 
-/* ===== Dark Mode Variant ===== */
-
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* ===== Theme: Light Mode (Default) ===== */
+/* ===== Theme — Dark (Linear-inspired) ===== */
 
 @theme {
   --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, monospace;
 
-  --color-background: oklch(100% 0 0);
-  --color-foreground: oklch(9.8% 0 0);
-  --color-muted: oklch(96% 0 0);
-  --color-muted-foreground: oklch(40% 0 0);
-  --color-border: oklch(91% 0 0);
-  --color-primary: oklch(11% 0 0);
-  --color-primary-foreground: oklch(98% 0 0);
-  --color-accent: oklch(96% 0 0);
-  --color-accent-foreground: oklch(11% 0 0);
-}
-
-/* ===== Dark Mode Overrides ===== */
-
-.dark {
-  --color-background: oklch(7% 0 0);
-  --color-foreground: oklch(98% 0 0);
-  --color-muted: oklch(13% 0 0);
-  --color-muted-foreground: oklch(65% 0 0);
-  --color-border: oklch(22% 0 0);
-  --color-primary: oklch(98% 0 0);
-  --color-primary-foreground: oklch(7% 0 0);
-  --color-accent: oklch(13% 0 0);
-  --color-accent-foreground: oklch(98% 0 0);
+  --color-background: oklch(6% 0 0);
+  --color-foreground: oklch(93% 0 0);
+  --color-muted: oklch(11% 0 0);
+  --color-muted-foreground: oklch(55% 0 0);
+  --color-border: oklch(18% 0 0);
+  --color-primary: oklch(93% 0 0);
+  --color-primary-foreground: oklch(6% 0 0);
+  --color-accent: oklch(14% 0 0);
+  --color-accent-foreground: oklch(93% 0 0);
 }
 
 /* ===== Base Styles ===== */
@@ -72,10 +54,9 @@ body {
 }
 
 .section-inverted {
-  background-color: var(--color-primary);
-  color: var(--color-primary-foreground);
+  background-color: var(--color-accent);
+  color: var(--color-accent-foreground);
 }
-
 
 /* ===== Scroll Animations ===== */
 
@@ -151,6 +132,33 @@ html:not(.js) [data-animate] {
   [data-delay="4"],
   [data-delay="5"] {
     transition-delay: 0ms !important;
+  }
+}
+
+/* ===== Hero Ring Animation ===== */
+
+.hero-ring {
+  animation: spin-slow 20s linear infinite;
+}
+
+.hero-knob {
+  animation: knob-pulse 2s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes knob-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ring,
+  .hero-knob {
+    animation: none;
   }
 }
 

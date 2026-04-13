@@ -1,64 +1,11 @@
-/* ===== Static Template Framework — main.js ===== */
-/* Handles: dark mode toggle, mobile navigation, scroll animations, carousel keyboard nav */
+/* ===== Core Template — main.js ===== */
+/* Handles: mobile navigation, scroll animations, carousel keyboard nav */
 
 (function () {
   'use strict';
 
   // Mark JS as available (enables animation hiding via CSS)
   document.documentElement.classList.add('js');
-
-  // ===== Dark Mode =====
-
-  const THEME_KEY = 'theme';
-  const DARK_CLASS = 'dark';
-
-  function getSystemPreference() {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
-  function applyTheme(theme) {
-    const isDark = theme === 'dark' || (theme === 'system' && getSystemPreference() === 'dark');
-    document.documentElement.classList.toggle(DARK_CLASS, isDark);
-
-    // Update toggle button aria-label
-    const toggle = document.getElementById('theme-toggle');
-    if (toggle) {
-      const label = theme === 'system' ? 'System theme' : theme === 'dark' ? 'Dark theme' : 'Light theme';
-      toggle.setAttribute('aria-label', label);
-    }
-
-    // Update toggle icons visibility
-    document.querySelectorAll('[data-theme-icon]').forEach(function (icon) {
-      icon.classList.toggle('hidden', icon.dataset.themeIcon !== theme);
-    });
-  }
-
-  function cycleTheme() {
-    var stored = localStorage.getItem(THEME_KEY) || 'system';
-    var next = stored === 'system' ? 'light' : stored === 'light' ? 'dark' : 'system';
-    localStorage.setItem(THEME_KEY, next);
-    applyTheme(next);
-  }
-
-  // Apply saved theme on load
-  applyTheme(localStorage.getItem(THEME_KEY) || 'system');
-
-  // Listen for OS theme changes (only matters when set to "system")
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
-    var stored = localStorage.getItem(THEME_KEY) || 'system';
-    if (stored === 'system') {
-      applyTheme('system');
-    }
-  });
-
-  // Bind toggle button
-  document.addEventListener('DOMContentLoaded', function () {
-    var toggle = document.getElementById('theme-toggle');
-    if (toggle) {
-      toggle.addEventListener('click', cycleTheme);
-      applyTheme(localStorage.getItem(THEME_KEY) || 'system');
-    }
-  });
 
   // ===== Mobile Navigation =====
 

@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acme — The modern platform for teams</title>
-  <meta name="description" content="Acme helps teams ship faster with integrated tools for planning, building, and deploying.">
+  <title>Core — The modern platform for teams</title>
+  <meta name="description" content="Core helps teams ship faster with integrated tools for planning, building, and deploying.">
 
   <!-- Favicon (replace with your own) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Acme — The modern platform for teams">
-  <meta property="og:description" content="Acme helps teams ship faster with integrated tools for planning, building, and deploying.">
+  <meta property="og:title" content="Core — The modern platform for teams">
+  <meta property="og:description" content="Core helps teams ship faster with integrated tools for planning, building, and deploying.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://example.com">
   <meta property="og:image" content="https://example.com/og-image.png">
@@ -21,16 +21,6 @@
 
   <!-- Fonts are loaded via CSS @font-face -->
   <link rel="stylesheet" href="css/styles.css">
-
-  <!-- FOUC-free dark mode: must run before first paint -->
-  <script>
-    (function() {
-      var t = localStorage.getItem('theme') || 'system';
-      var d = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-      if (d) document.documentElement.classList.add('dark');
-    })();
-  </script>
-
   <script src="js/main.js" defer></script>
 </head>
 <body class="font-sans antialiased">
@@ -42,9 +32,9 @@
 
   <!-- ===== Navigation ===== -->
   <header class="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
       <!-- Logo -->
-      <a href="/" class="text-xl font-bold tracking-tight">Acme</a>
+      <a href="/" class="text-xl font-bold tracking-tight">Core</a>
 
       <!-- Desktop links -->
       <div class="hidden items-center gap-8 md:flex">
@@ -55,23 +45,11 @@
         <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
       </div>
 
-      <div class="flex items-center gap-4">
-        <!-- Dark mode toggle -->
-        <button id="theme-toggle" type="button" aria-label="Toggle theme" class="relative flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">
-          <!-- Sun icon (light) -->
-          <svg data-theme-icon="light" aria-hidden="true" class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/></svg>
-          <!-- Monitor icon (system) -->
-          <svg data-theme-icon="system" aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
-          <!-- Moon icon (dark) -->
-          <svg data-theme-icon="dark" aria-hidden="true" class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path d="M21.752 15.002A9.718 9.718 0 0112.478 3.34a9.72 9.72 0 109.274 11.662z"/></svg>
-        </button>
-
-        <!-- Mobile menu button -->
-        <button id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" class="flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors md:hidden">
-          <span class="sr-only">Open menu</span>
-          <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
-        </button>
-      </div>
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" class="flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors md:hidden">
+        <span class="sr-only">Open menu</span>
+        <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </button>
     </nav>
 
     <!-- Mobile menu -->
@@ -89,28 +67,66 @@
   <main id="main">
 
     <!-- ===== Hero Section ===== -->
-    <section class="relative overflow-hidden py-24 md:py-32 lg:py-40">
-      <div class="mx-auto max-w-7xl px-6">
-        <div class="mx-auto max-w-3xl text-center" data-animate>
-          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+    <section class="pt-20 pb-12 md:pt-28 md:pb-16 lg:pt-36 lg:pb-20">
+      <!-- Headline — normal container -->
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="max-w-4xl" data-animate>
+          <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
             Ship faster with the platform your team deserves
           </h1>
-          <p class="mt-6 text-lg text-muted-foreground sm:text-xl">
-            Acme brings planning, building, and deploying into one seamless workflow. Less context switching, more shipping.
+          <p class="mt-6 max-w-xl text-lg text-muted-foreground">
+            AI is fundamentally changing how products get built. We are shaping what comes next.
           </p>
-          <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:opacity-90 transition-opacity">
-              Get started free
-            </a>
-            <a href="#features" class="inline-flex items-center justify-center rounded-md border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted transition-colors">
-              See features
-            </a>
-          </div>
         </div>
-        <!-- Hero visual placeholder -->
-        <div class="mx-auto mt-16 max-w-4xl" data-animate data-delay="2">
-          <div class="img-placeholder aspect-video rounded-xl border border-border">
-            <svg aria-hidden="true" class="h-16 w-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+      </div>
+
+      <!-- Hero image — wider container, breaks out, gradient box -->
+      <div class="mx-auto max-w-[88rem] px-6 mt-12 md:mt-16" data-animate data-delay="1">
+        <div class="rounded-2xl p-8 md:p-16 flex items-center justify-center" style="background: linear-gradient(to top, rgba(128,134,145,0.3), transparent)">
+          <svg class="hero-ring w-full max-w-lg aspect-square" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="white" stop-opacity="0.9"/>
+                <stop offset="50%" stop-color="white" stop-opacity="0.1"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0.9"/>
+              </linearGradient>
+              <filter id="knob-glow">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <circle cx="100" cy="100" r="90" stroke="url(#ring-gradient)" stroke-width="0.75" fill="none"/>
+            <!-- Knob sits at top of circle (cx=100, cy=10 = radius 90 from center) -->
+            <g class="hero-knob" filter="url(#knob-glow)">
+              <circle cx="100" cy="10" r="4" fill="white" opacity="0.15"/>
+              <circle cx="100" cy="10" r="1.5" fill="white"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Below image — normal container, 1/3 + 2/3 -->
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="mt-12 grid gap-8 md:mt-16 md:grid-cols-3 md:gap-12" data-animate data-delay="2">
+          <div>
+            <h2 class="text-2xl font-medium tracking-tight sm:text-3xl">A new species of product tool</h2>
+          </div>
+          <div class="md:col-span-2">
+            <p class="text-lg font-medium text-foreground leading-relaxed">
+              Software development is at an inflection point. Artificial intelligence is fundamentally reshaping how products are built.
+            </p>
+            <p class="mt-4 text-muted-foreground leading-relaxed">
+              At Core, we are building the tools for this new era of product development. A purpose-built system where teams and agents operate together in a single, cohesive environment. Less context switching, more shipping.
+            </p>
+            <p class="mt-4 text-muted-foreground leading-relaxed">
+              Founded in 2024, Core has become the tool of choice for more than 25,000 companies including Figma, Coinbase, and Ramp to plan, build, and ship their products. Our team is distributed across North America and Europe, and we're continuing to grow intentionally.
+            </p>
+            <p class="mt-4 text-muted-foreground leading-relaxed">
+              What unites us is a relentless focus, fast execution, and a deep care for the craft of software development.
+            </p>
           </div>
         </div>
       </div>
@@ -118,23 +134,39 @@
 
     <!-- ===== Trust / Logo Bar ===== -->
     <section class="border-y border-border py-12">
-      <div class="mx-auto max-w-7xl px-6">
-        <p class="text-center text-sm font-medium text-muted-foreground" data-animate="fade">Trusted by leading teams worldwide</p>
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6" data-animate="fade" data-delay="1">
-          <!-- 6 placeholder logos (simple rectangles with text) -->
-          <div class="h-8 w-24 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
-          <div class="h-8 w-20 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
-          <div class="h-8 w-28 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
-          <div class="h-8 w-24 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
-          <div class="h-8 w-20 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
-          <div class="h-8 w-28 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="grid grid-cols-3 text-muted-foreground" data-animate="fade">
+          <!-- Arcline -->
+          <div class="flex items-center justify-center border-r border-b border-border py-8">
+            <svg class="h-7" viewBox="0 0 100 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M0 22C0 10 8 4 16 4s12 4 12 10c0 4-3 7-7 7s-6-2-6-5 2-4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M36 21V9h1.4l.2 2c.8-1.4 2.2-2.2 4-2.2v1.8h-.4c-2 0-3.4 1.2-3.4 3.6V21H36zm11.4.2c-2.6 0-4.4-1.8-4.4-4.4V9h1.8v7.4c0 1.8 1 3 2.8 3s3-1.4 3-3.2V9h1.8v12h-1.4l-.2-1.8c-.8 1.2-2 2-3.4 2zM56 21V9h1.4l.2 2c.8-1.4 2.2-2.2 4-2.2v1.8h-.4c-2 0-3.4 1.2-3.4 3.6V21H56zm13 .2c-3.4 0-5.6-2.6-5.6-6.2s2.2-6.2 5.6-6.2c2 0 3.4.8 4.2 2l-1.2 1c-.6-.8-1.6-1.4-3-1.4-2.4 0-3.8 1.8-3.8 4.6s1.4 4.6 3.8 4.6c1.4 0 2.4-.6 3-1.4l1.2 1c-.8 1.2-2.2 2-4.2 2z"/></svg>
+          </div>
+          <!-- Solara -->
+          <div class="flex items-center justify-center border-r border-b border-border py-8">
+            <svg class="h-7" viewBox="0 0 110 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M10 14h8M14 10v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M34 21.2c-1.6 0-3-.6-4-1.6l1-1.2c.8.8 1.8 1.2 3 1.2 1.4 0 2-.6 2-1.4 0-.8-.6-1.2-2.4-1.6-2.2-.5-3.4-1.2-3.4-3 0-1.8 1.4-3 3.6-3 1.4 0 2.6.5 3.4 1.2l-1 1.2c-.6-.6-1.5-1-2.4-1-1.2 0-1.8.5-1.8 1.3 0 .8.6 1.1 2.4 1.6 2.2.5 3.4 1.2 3.4 3 0 1.8-1.5 3.1-3.8 3.1zM44.6 21.2c-3.4 0-5.6-2.6-5.6-6.2s2.2-6.2 5.6-6.2 5.6 2.6 5.6 6.2-2.2 6.2-5.6 6.2zm0-1.6c2.4 0 3.8-1.8 3.8-4.6s-1.4-4.6-3.8-4.6-3.8 1.8-3.8 4.6 1.4 4.6 3.8 4.6zM54 21V3h1.8v18H54z"/></svg>
+          </div>
+          <!-- Pavelock -->
+          <div class="flex items-center justify-center border-b border-border py-8">
+            <svg class="h-7" viewBox="0 0 120 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h8l8 20H12L4 4z" fill="currentColor" opacity="0.6"/><path d="M12 4h8l8 20H20L12 4z" fill="currentColor"/><path d="M38 21V9h1.4l.2 2c.8-1.4 2.2-2.2 4-2.2 2.6 0 4.2 1.8 4.2 4.6V21H46v-7.2c0-2-1-3.2-2.8-3.2s-3.2 1.4-3.2 3.4V21H38zm15 0V9h1.4l.2 2c.8-1.4 2-2.2 3.6-2.2 1.4 0 2.4.6 3 1.8.8-1.2 2.2-1.8 3.6-1.8 2.4 0 3.8 1.6 3.8 4.4V21h-1.8v-7.2c0-2-.8-3.2-2.4-3.2-1.6 0-2.8 1.4-2.8 3.4V21h-1.8v-7.2c0-2-.8-3.2-2.4-3.2-1.6 0-2.8 1.4-2.8 3.4V21H53z"/></svg>
+          </div>
+          <!-- Nimbus -->
+          <div class="flex items-center justify-center border-r border-border py-8">
+            <svg class="h-7" viewBox="0 0 100 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M2 20L8 6l6 14H2z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round"/><path d="M5 14h6" stroke="currentColor" stroke-width="1.2"/><path d="M24 21V9h1.4l.2 2c.8-1.4 2.2-2.2 4-2.2 2.6 0 4.2 1.8 4.2 4.6V21H32v-7.2c0-2-1-3.2-2.8-3.2s-3.2 1.4-3.2 3.4V21H24zm16 0V9h1.4l.2 2c.8-1.4 2-2.2 3.6-2.2 1.4 0 2.4.6 3 1.8.8-1.2 2.2-1.8 3.6-1.8 2.4 0 3.8 1.6 3.8 4.4V21h-1.8v-7.2c0-2-.8-3.2-2.4-3.2-1.6 0-2.8 1.4-2.8 3.4V21h-1.8v-7.2c0-2-.8-3.2-2.4-3.2-1.6 0-2.8 1.4-2.8 3.4V21H40z"/></svg>
+          </div>
+          <!-- Quartex -->
+          <div class="flex items-center justify-center border-r border-border py-8">
+            <svg class="h-7" viewBox="0 0 110 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="7" height="7" fill="currentColor"/><rect x="11" y="6" width="7" height="7" fill="currentColor" opacity="0.4"/><rect x="2" y="15" width="7" height="7" fill="currentColor" opacity="0.4"/><rect x="11" y="15" width="7" height="7" fill="currentColor"/><path d="M30 21.2c-3.4 0-5.2-2.2-5.2-5.4V9h1.8v6.6c0 2.4 1.2 3.8 3.4 3.8s3.4-1.4 3.4-3.8V9h1.8v6.8c0 3.2-1.8 5.4-5.2 5.4zM41.4 21V3H43v7c.8-1 2-1.6 3.4-1.6 2.6 0 4.2 1.8 4.2 4.6V21h-1.8v-7.2c0-2-1-3.2-2.8-3.2-1.8 0-3.2 1.4-3.2 3.4V21h-1.4z"/></svg>
+          </div>
+          <!-- Wavefront -->
+          <div class="flex items-center justify-center py-8">
+            <svg class="h-7" viewBox="0 0 90 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 18c3-10 5-10 8 0s5 10 8 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M32 21L28 9h1.8l2.6 8.4L35.2 9h1.8l2.8 8.4L42.4 9h1.8L40.2 21h-1.6l-2.8-8-2.8 8H32zm20 0V9h1.8v12H52zm7 .2c-3.4 0-5.6-2.6-5.6-6.2s2.2-6.2 5.6-6.2 5.6 2.6 5.6 6.2-2.2 6.2-5.6 6.2zm0-1.6c2.4 0 3.8-1.8 3.8-4.6s-1.4-4.6-3.8-4.6-3.8 1.8-3.8 4.6 1.4 4.6 3.8 4.6z"/></svg>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== Features ===== -->
     <section id="features" class="py-20 md:py-28">
-      <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-5xl px-6">
         <div class="mx-auto max-w-2xl text-center" data-animate>
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Everything you need to ship</h2>
           <p class="mt-4 text-lg text-muted-foreground">Built for modern teams who value speed and simplicity.</p>
@@ -170,22 +202,20 @@
 
     <!-- ===== About / Content Block ===== -->
     <section id="about" class="section-muted py-20 md:py-28">
-      <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-5xl px-6">
         <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div data-animate="slide-left">
-            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Why Acme</p>
+            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Why Core</p>
             <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Built by engineers,<br>designed for everyone</h2>
             <p class="mt-6 text-muted-foreground leading-relaxed">
-              We started Acme because we were tired of stitching together five different tools just to ship a feature. Our platform replaces the chaos with a single, cohesive workflow that your entire team can rally around.
+              We started Core because we were tired of stitching together five different tools just to ship a feature. Our platform replaces the chaos with a single, cohesive workflow that your entire team can rally around.
             </p>
             <p class="mt-4 text-muted-foreground leading-relaxed">
               From the first commit to production deploy, every step lives in one place. No more lost context, no more tab overload.
             </p>
           </div>
           <div data-animate="slide-right" data-delay="2">
-            <div class="img-placeholder aspect-[4/3] rounded-xl border border-border">
-              <svg aria-hidden="true" class="h-16 w-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v13.5A1.5 1.5 0 003.75 21z"/></svg>
-            </div>
+            <img src="img/whiteboard-planning.jpg" alt="Engineer planning product architecture on whiteboard" class="aspect-[4/3] w-full rounded-xl border border-border object-cover" loading="lazy">
           </div>
         </div>
       </div>
@@ -193,14 +223,14 @@
 
     <!-- ===== Card Carousel ===== -->
     <section class="py-20 md:py-28">
-      <div class="mx-auto max-w-7xl px-6 mb-12">
+      <div class="mx-auto max-w-5xl px-6 mb-12">
         <div class="max-w-2xl" data-animate>
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Explore what's possible</h2>
-          <p class="mt-4 text-lg text-muted-foreground">From prototyping to production, Acme adapts to your workflow.</p>
+          <p class="mt-4 text-lg text-muted-foreground">From prototyping to production, Core adapts to your workflow.</p>
         </div>
       </div>
       <!-- Wrapper: aligns left edge with container, breaks out right via negative margin -->
-      <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-5xl px-6">
         <div
           class="carousel overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 -mr-[calc(50vw-50%)] pr-4"
           role="region"
@@ -210,9 +240,7 @@
           <div class="flex gap-6">
           <!-- Card 1 -->
           <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="1">
-            <div class="img-placeholder aspect-[3/2] rounded-lg">
-              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/></svg>
-            </div>
+            <img src="img/man-writing-notes.jpeg" alt="Developer writing notes at desk" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
             <div class="p-5">
               <h3 class="font-semibold">Developer tools</h3>
               <p class="mt-2 text-sm text-muted-foreground">Integrated CLI, API docs, and SDKs that feel like they were built for you.</p>
@@ -220,9 +248,7 @@
           </article>
           <!-- Card 2 -->
           <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="2">
-            <div class="img-placeholder aspect-[3/2] rounded-lg">
-              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
-            </div>
+            <img src="img/woman-at-desk.jpg" alt="Professional working at modern desk" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
             <div class="p-5">
               <h3 class="font-semibold">Analytics dashboard</h3>
               <p class="mt-2 text-sm text-muted-foreground">Real-time metrics, custom reports, and alerts so you always know what's happening.</p>
@@ -230,9 +256,7 @@
           </article>
           <!-- Card 3 -->
           <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="3">
-            <div class="img-placeholder aspect-[3/2] rounded-lg">
-              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
-            </div>
+            <img src="img/office-hallway.jpg" alt="Modern office hallway with plants" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
             <div class="p-5">
               <h3 class="font-semibold">Managed database</h3>
               <p class="mt-2 text-sm text-muted-foreground">Postgres, Redis, and object storage — fully managed, auto-scaling, zero config.</p>
@@ -240,9 +264,7 @@
           </article>
           <!-- Card 4 -->
           <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="4">
-            <div class="img-placeholder aspect-[3/2] rounded-lg">
-              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 003 12c0-1.605.42-3.113 1.157-4.418"/></svg>
-            </div>
+            <img src="img/minimal-workspace.jpg" alt="Minimalist workspace with clean design" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
             <div class="p-5">
               <h3 class="font-semibold">Global CDN</h3>
               <p class="mt-2 text-sm text-muted-foreground">Edge caching in 50+ regions. Your users get sub-100ms load times, everywhere.</p>
@@ -250,9 +272,7 @@
           </article>
           <!-- Card 5 -->
           <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="5">
-            <div class="img-placeholder aspect-[3/2] rounded-lg">
-              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.421 48.421 0 01-4.163-.3c.186 1.613.446 3.2.777 4.757a.528.528 0 01-.48.642 47.706 47.706 0 01-3.527.217m9.75-4.96v0c.186 1.613.446 3.2.777 4.757a.528.528 0 00.48.642c1.178.085 2.36.135 3.547.165m0 0c-.473 1.776-1.192 3.447-2.128 4.975M21.75 12H18M6 12H2.25m0 0c.473 1.776 1.192 3.447 2.128 4.975M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h.008c.621 0 1.125.504 1.125 1.125V21M3 3h12m-4.5 9H12m0 0V9m0 3H9"/></svg>
-            </div>
+            <img src="img/team-meeting.jpg" alt="Team meeting around a table" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
             <div class="p-5">
               <h3 class="font-semibold">CI/CD pipelines</h3>
               <p class="mt-2 text-sm text-muted-foreground">Automatic builds, tests, and deploys on every push. Zero config, infinite flexibility.</p>
@@ -260,9 +280,7 @@
           </article>
           <!-- Card 6 -->
           <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate>
-            <div class="img-placeholder aspect-[3/2] rounded-lg">
-              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
-            </div>
+            <img src="img/woman-at-laptop.jpg" alt="Professional working at laptop in coworking space" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
             <div class="p-5">
               <h3 class="font-semibold">Team chat</h3>
               <p class="mt-2 text-sm text-muted-foreground">Built-in messaging with threads, mentions, and code snippets. No more switching to Slack.</p>
@@ -277,18 +295,16 @@
 
     <!-- ===== Testimonials ===== -->
     <section class="section-muted py-20 md:py-28">
-      <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-5xl px-6">
         <div class="mx-auto max-w-2xl text-center" data-animate>
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Loved by teams everywhere</h2>
         </div>
         <div class="mt-16 grid gap-8 md:grid-cols-3">
           <!-- Testimonial 1 -->
           <blockquote class="rounded-xl border border-border bg-background p-8" data-animate data-delay="1">
-            <p class="text-sm leading-relaxed text-muted-foreground">"Acme cut our deploy time from 20 minutes to under 2. The team has never shipped this fast — and we're a 50-person engineering org."</p>
+            <p class="text-sm leading-relaxed text-muted-foreground">"Core cut our deploy time from 20 minutes to under 2. The team has never shipped this fast — and we're a 50-person engineering org."</p>
             <div class="mt-6 flex items-center gap-3">
-              <div class="img-placeholder h-10 w-10 rounded-full">
-                <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
-              </div>
+              <img src="img/woman-in-office.jpg" alt="Sarah Chen" class="h-10 w-10 rounded-full object-cover" loading="lazy">
               <div>
                 <p class="text-sm font-semibold">Sarah Chen</p>
                 <p class="text-xs text-muted-foreground">VP Engineering, Raycast</p>
@@ -297,11 +313,9 @@
           </blockquote>
           <!-- Testimonial 2 -->
           <blockquote class="rounded-xl border border-border bg-background p-8" data-animate data-delay="2">
-            <p class="text-sm leading-relaxed text-muted-foreground">"We evaluated 12 tools before choosing Acme. Nothing else came close in terms of developer experience. It just works."</p>
+            <p class="text-sm leading-relaxed text-muted-foreground">"We evaluated 12 tools before choosing Core. Nothing else came close in terms of developer experience. It just works."</p>
             <div class="mt-6 flex items-center gap-3">
-              <div class="img-placeholder h-10 w-10 rounded-full">
-                <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
-              </div>
+              <img src="img/man-laughing.jpg" alt="Marcus Rivera" class="h-10 w-10 rounded-full object-cover" loading="lazy">
               <div>
                 <p class="text-sm font-semibold">Marcus Rivera</p>
                 <p class="text-xs text-muted-foreground">CTO, Basecamp</p>
@@ -310,11 +324,9 @@
           </blockquote>
           <!-- Testimonial 3 -->
           <blockquote class="rounded-xl border border-border bg-background p-8" data-animate data-delay="3">
-            <p class="text-sm leading-relaxed text-muted-foreground">"The built-in analytics alone saved us $2k/month. Add the deployment speed and team features, and Acme is an absolute no-brainer."</p>
+            <p class="text-sm leading-relaxed text-muted-foreground">"The built-in analytics alone saved us $2k/month. Add the deployment speed and team features, and Core is an absolute no-brainer."</p>
             <div class="mt-6 flex items-center gap-3">
-              <div class="img-placeholder h-10 w-10 rounded-full">
-                <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
-              </div>
+              <img src="img/woman-at-desk.jpg" alt="Aisha Patel" class="h-10 w-10 rounded-full object-cover" loading="lazy">
               <div>
                 <p class="text-sm font-semibold">Aisha Patel</p>
                 <p class="text-xs text-muted-foreground">Head of Product, Linear</p>
@@ -327,7 +339,7 @@
 
     <!-- ===== Pricing ===== -->
     <section id="pricing" class="py-20 md:py-28">
-      <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-5xl px-6">
         <div class="mx-auto max-w-2xl text-center" data-animate>
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Simple, transparent pricing</h2>
           <p class="mt-4 text-lg text-muted-foreground">Start free. Upgrade when you're ready.</p>
@@ -416,11 +428,11 @@
     </section>
 
     <!-- ===== CTA / Newsletter ===== -->
-    <section id="contact" class="section-inverted py-20 md:py-28">
-      <div class="mx-auto max-w-7xl px-6">
+    <section id="contact" class="section-inverted py-32 md:py-44 lg:py-56">
+      <div class="mx-auto max-w-5xl px-6">
         <div class="mx-auto max-w-2xl text-center" data-animate>
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Start building today</h2>
-          <p class="mt-4 text-lg opacity-80">Join thousands of teams shipping faster with Acme. Free to start, no credit card required.</p>
+          <p class="mt-4 text-lg opacity-80">Join thousands of teams shipping faster with Core. Free to start, no credit card required.</p>
           <form class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center" action="#" method="post">
             <label for="email" class="sr-only">Email address</label>
             <input id="email" name="email" type="email" required placeholder="you@company.com" class="rounded-md border border-border bg-background/10 px-4 py-3 text-sm text-inherit placeholder:opacity-50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-foreground sm:w-72">
@@ -434,11 +446,11 @@
 
   <!-- ===== Footer ===== -->
   <footer class="border-t border-border py-12">
-    <div class="mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-5xl px-6">
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <!-- Brand -->
         <div>
-          <a href="/" class="text-lg font-bold tracking-tight">Acme</a>
+          <a href="/" class="text-lg font-bold tracking-tight">Core</a>
           <p class="mt-2 text-sm text-muted-foreground">The modern platform for teams who ship.</p>
         </div>
         <!-- Product -->
@@ -472,7 +484,7 @@
         </div>
       </div>
       <div class="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground">
-        <p>&copy; 2026 Acme Inc. All rights reserved.</p>
+        <p>&copy; 2026 Core Inc. All rights reserved.</p>
       </div>
     </div>
   </footer>
