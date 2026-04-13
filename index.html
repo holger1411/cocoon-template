@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acme — The modern platform for teams</title>
+  <meta name="description" content="Acme helps teams ship faster with integrated tools for planning, building, and deploying.">
+
+  <!-- Favicon (replace with your own) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Acme — The modern platform for teams">
+  <meta property="og:description" content="Acme helps teams ship faster with integrated tools for planning, building, and deploying.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com">
+  <meta property="og:image" content="https://example.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts are loaded via CSS @font-face -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- FOUC-free dark mode: must run before first paint -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || 'system';
+      var d = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (d) document.documentElement.classList.add('dark');
+    })();
+  </script>
+
+  <script src="js/main.js" defer></script>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Skip to content -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md">
+    Skip to content
+  </a>
+
+  <!-- ===== Navigation ===== -->
+  <header class="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <!-- Logo -->
+      <a href="/" class="text-xl font-bold tracking-tight">Acme</a>
+
+      <!-- Desktop links -->
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#features" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
+        <a href="#about" class="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
+        <a href="#pricing" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+        <a href="#faq" class="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
+        <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <!-- Dark mode toggle -->
+        <button id="theme-toggle" type="button" aria-label="Toggle theme" class="relative flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">
+          <!-- Sun icon (light) -->
+          <svg data-theme-icon="light" aria-hidden="true" class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/></svg>
+          <!-- Monitor icon (system) -->
+          <svg data-theme-icon="system" aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          <!-- Moon icon (dark) -->
+          <svg data-theme-icon="dark" aria-hidden="true" class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path d="M21.752 15.002A9.718 9.718 0 0112.478 3.34a9.72 9.72 0 109.274 11.662z"/></svg>
+        </button>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" class="flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors md:hidden">
+          <span class="sr-only">Open menu</span>
+          <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" aria-hidden="true" class="hidden border-t border-border bg-background px-6 py-4 md:hidden">
+      <div class="flex flex-col gap-4">
+        <a href="#features" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
+        <a href="#about" class="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
+        <a href="#pricing" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+        <a href="#faq" class="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
+        <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== Hero Section ===== -->
+    <section class="relative overflow-hidden py-24 md:py-32 lg:py-40">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mx-auto max-w-3xl text-center" data-animate>
+          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            Ship faster with the platform your team deserves
+          </h1>
+          <p class="mt-6 text-lg text-muted-foreground sm:text-xl">
+            Acme brings planning, building, and deploying into one seamless workflow. Less context switching, more shipping.
+          </p>
+          <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:opacity-90 transition-opacity">
+              Get started free
+            </a>
+            <a href="#features" class="inline-flex items-center justify-center rounded-md border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted transition-colors">
+              See features
+            </a>
+          </div>
+        </div>
+        <!-- Hero visual placeholder -->
+        <div class="mx-auto mt-16 max-w-4xl" data-animate data-delay="2">
+          <div class="img-placeholder aspect-video rounded-xl border border-border">
+            <svg aria-hidden="true" class="h-16 w-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Trust / Logo Bar ===== -->
+    <section class="border-y border-border py-12">
+      <div class="mx-auto max-w-7xl px-6">
+        <p class="text-center text-sm font-medium text-muted-foreground" data-animate="fade">Trusted by leading teams worldwide</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6" data-animate="fade" data-delay="1">
+          <!-- 6 placeholder logos (simple rectangles with text) -->
+          <div class="h-8 w-24 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
+          <div class="h-8 w-20 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
+          <div class="h-8 w-28 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
+          <div class="h-8 w-24 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
+          <div class="h-8 w-20 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
+          <div class="h-8 w-28 rounded bg-muted flex items-center justify-center text-xs text-muted-foreground font-medium">Logo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Features ===== -->
+    <section id="features" class="py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mx-auto max-w-2xl text-center" data-animate>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Everything you need to ship</h2>
+          <p class="mt-4 text-lg text-muted-foreground">Built for modern teams who value speed and simplicity.</p>
+        </div>
+        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Feature 1 -->
+          <div class="rounded-xl border border-border p-8" data-animate data-delay="1">
+            <div class="img-placeholder mb-6 h-12 w-12 rounded-lg">
+              <svg aria-hidden="true" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold">Lightning fast builds</h3>
+            <p class="mt-2 text-sm text-muted-foreground">Deploy in seconds, not minutes. Our build pipeline is optimized for speed without compromising reliability.</p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="rounded-xl border border-border p-8" data-animate data-delay="2">
+            <div class="img-placeholder mb-6 h-12 w-12 rounded-lg">
+              <svg aria-hidden="true" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold">Team collaboration</h3>
+            <p class="mt-2 text-sm text-muted-foreground">Real-time editing, shared workspaces, and smart notifications keep everyone aligned without the noise.</p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="rounded-xl border border-border p-8" data-animate data-delay="3">
+            <div class="img-placeholder mb-6 h-12 w-12 rounded-lg">
+              <svg aria-hidden="true" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold">Enterprise security</h3>
+            <p class="mt-2 text-sm text-muted-foreground">SOC 2 compliant, end-to-end encrypted, with granular access controls. Your data stays yours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About / Content Block ===== -->
+    <section id="about" class="section-muted py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <div data-animate="slide-left">
+            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Why Acme</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Built by engineers,<br>designed for everyone</h2>
+            <p class="mt-6 text-muted-foreground leading-relaxed">
+              We started Acme because we were tired of stitching together five different tools just to ship a feature. Our platform replaces the chaos with a single, cohesive workflow that your entire team can rally around.
+            </p>
+            <p class="mt-4 text-muted-foreground leading-relaxed">
+              From the first commit to production deploy, every step lives in one place. No more lost context, no more tab overload.
+            </p>
+          </div>
+          <div data-animate="slide-right" data-delay="2">
+            <div class="img-placeholder aspect-[4/3] rounded-xl border border-border">
+              <svg aria-hidden="true" class="h-16 w-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v13.5A1.5 1.5 0 003.75 21z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Card Carousel ===== -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 mb-12">
+        <div class="max-w-2xl" data-animate>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Explore what's possible</h2>
+          <p class="mt-4 text-lg text-muted-foreground">From prototyping to production, Acme adapts to your workflow.</p>
+        </div>
+      </div>
+      <!-- Wrapper: aligns left edge with container, breaks out right via negative margin -->
+      <div class="mx-auto max-w-7xl px-6">
+        <div
+          class="carousel overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 -mr-[calc(50vw-50%)] pr-4"
+          role="region"
+          aria-label="Feature showcase carousel — scroll horizontally or use arrow keys"
+          tabindex="0"
+        >
+          <div class="flex gap-6">
+          <!-- Card 1 -->
+          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="1">
+            <div class="img-placeholder aspect-[3/2] rounded-lg">
+              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/></svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-semibold">Developer tools</h3>
+              <p class="mt-2 text-sm text-muted-foreground">Integrated CLI, API docs, and SDKs that feel like they were built for you.</p>
+            </div>
+          </article>
+          <!-- Card 2 -->
+          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="2">
+            <div class="img-placeholder aspect-[3/2] rounded-lg">
+              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-semibold">Analytics dashboard</h3>
+              <p class="mt-2 text-sm text-muted-foreground">Real-time metrics, custom reports, and alerts so you always know what's happening.</p>
+            </div>
+          </article>
+          <!-- Card 3 -->
+          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="3">
+            <div class="img-placeholder aspect-[3/2] rounded-lg">
+              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-semibold">Managed database</h3>
+              <p class="mt-2 text-sm text-muted-foreground">Postgres, Redis, and object storage — fully managed, auto-scaling, zero config.</p>
+            </div>
+          </article>
+          <!-- Card 4 -->
+          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="4">
+            <div class="img-placeholder aspect-[3/2] rounded-lg">
+              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 003 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-semibold">Global CDN</h3>
+              <p class="mt-2 text-sm text-muted-foreground">Edge caching in 50+ regions. Your users get sub-100ms load times, everywhere.</p>
+            </div>
+          </article>
+          <!-- Card 5 -->
+          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="5">
+            <div class="img-placeholder aspect-[3/2] rounded-lg">
+              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.421 48.421 0 01-4.163-.3c.186 1.613.446 3.2.777 4.757a.528.528 0 01-.48.642 47.706 47.706 0 01-3.527.217m9.75-4.96v0c.186 1.613.446 3.2.777 4.757a.528.528 0 00.48.642c1.178.085 2.36.135 3.547.165m0 0c-.473 1.776-1.192 3.447-2.128 4.975M21.75 12H18M6 12H2.25m0 0c.473 1.776 1.192 3.447 2.128 4.975M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h.008c.621 0 1.125.504 1.125 1.125V21M3 3h12m-4.5 9H12m0 0V9m0 3H9"/></svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-semibold">CI/CD pipelines</h3>
+              <p class="mt-2 text-sm text-muted-foreground">Automatic builds, tests, and deploys on every push. Zero config, infinite flexibility.</p>
+            </div>
+          </article>
+          <!-- Card 6 -->
+          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate>
+            <div class="img-placeholder aspect-[3/2] rounded-lg">
+              <svg aria-hidden="true" class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-semibold">Team chat</h3>
+              <p class="mt-2 text-sm text-muted-foreground">Built-in messaging with threads, mentions, and code snippets. No more switching to Slack.</p>
+            </div>
+          </article>
+          <!-- Right padding spacer -->
+          <div class="flex-shrink-0 w-8" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Testimonials ===== -->
+    <section class="section-muted py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mx-auto max-w-2xl text-center" data-animate>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Loved by teams everywhere</h2>
+        </div>
+        <div class="mt-16 grid gap-8 md:grid-cols-3">
+          <!-- Testimonial 1 -->
+          <blockquote class="rounded-xl border border-border bg-background p-8" data-animate data-delay="1">
+            <p class="text-sm leading-relaxed text-muted-foreground">"Acme cut our deploy time from 20 minutes to under 2. The team has never shipped this fast — and we're a 50-person engineering org."</p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="img-placeholder h-10 w-10 rounded-full">
+                <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold">Sarah Chen</p>
+                <p class="text-xs text-muted-foreground">VP Engineering, Raycast</p>
+              </div>
+            </div>
+          </blockquote>
+          <!-- Testimonial 2 -->
+          <blockquote class="rounded-xl border border-border bg-background p-8" data-animate data-delay="2">
+            <p class="text-sm leading-relaxed text-muted-foreground">"We evaluated 12 tools before choosing Acme. Nothing else came close in terms of developer experience. It just works."</p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="img-placeholder h-10 w-10 rounded-full">
+                <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold">Marcus Rivera</p>
+                <p class="text-xs text-muted-foreground">CTO, Basecamp</p>
+              </div>
+            </div>
+          </blockquote>
+          <!-- Testimonial 3 -->
+          <blockquote class="rounded-xl border border-border bg-background p-8" data-animate data-delay="3">
+            <p class="text-sm leading-relaxed text-muted-foreground">"The built-in analytics alone saved us $2k/month. Add the deployment speed and team features, and Acme is an absolute no-brainer."</p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="img-placeholder h-10 w-10 rounded-full">
+                <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold">Aisha Patel</p>
+                <p class="text-xs text-muted-foreground">Head of Product, Linear</p>
+              </div>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pricing ===== -->
+    <section id="pricing" class="py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mx-auto max-w-2xl text-center" data-animate>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Simple, transparent pricing</h2>
+          <p class="mt-4 text-lg text-muted-foreground">Start free. Upgrade when you're ready.</p>
+        </div>
+        <div class="mt-16 grid gap-8 lg:grid-cols-3">
+          <!-- Free -->
+          <div class="rounded-xl border border-border p-8" data-animate data-delay="1">
+            <h3 class="text-lg font-semibold">Starter</h3>
+            <p class="mt-2 text-sm text-muted-foreground">For individuals and small projects.</p>
+            <p class="mt-6"><span class="text-4xl font-bold">$0</span><span class="text-sm text-muted-foreground">/month</span></p>
+            <ul class="mt-8 space-y-3 text-sm text-muted-foreground">
+              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Up to 3 projects</li>
+              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>1 GB storage</li>
+              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Community support</li>
+            </ul>
+            <a href="#contact" class="mt-8 inline-flex w-full items-center justify-center rounded-md border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted transition-colors">Get started</a>
+          </div>
+          <!-- Pro (recommended) -->
+          <div class="relative rounded-xl border-2 border-foreground p-8" data-animate data-delay="2">
+            <span class="absolute -top-3 left-6 rounded-full bg-foreground px-3 py-0.5 text-xs font-medium text-background">Most popular</span>
+            <h3 class="text-lg font-semibold">Pro</h3>
+            <p class="mt-2 text-sm text-muted-foreground">For growing teams that need more power.</p>
+            <p class="mt-6"><span class="text-4xl font-bold">$29</span><span class="text-sm text-muted-foreground">/month</span></p>
+            <ul class="mt-8 space-y-3 text-sm text-muted-foreground">
+              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Unlimited projects</li>
+              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>50 GB storage</li>
+              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Priority support</li>
+              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Team collaboration</li>
+            </ul>
+            <a href="#contact" class="mt-8 inline-flex w-full items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:opacity-90 transition-opacity">Start free trial</a>
+          </div>
+          <!-- Enterprise -->
+          <div class="rounded-xl border border-border p-8" data-animate data-delay="3">
+            <h3 class="text-lg font-semibold">Enterprise</h3>
+            <p class="mt-2 text-sm text-muted-foreground">For organizations with advanced needs.</p>
+            <p class="mt-6"><span class="text-4xl font-bold">Custom</span></p>
+            <ul class="mt-8 space-y-3 text-sm text-muted-foreground">
+              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Everything in Pro</li>
+              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>SSO &amp; SAML</li>
+              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Dedicated account manager</li>
+              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Custom SLA</li>
+            </ul>
+            <a href="#contact" class="mt-8 inline-flex w-full items-center justify-center rounded-md border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted transition-colors">Contact sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="section-muted py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-6">
+        <div class="text-center" data-animate>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Frequently asked questions</h2>
+        </div>
+        <div class="mt-12 space-y-4">
+          <details class="group rounded-xl border border-border bg-background" data-animate data-delay="1">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-5 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:rounded-xl [&::-webkit-details-marker]:hidden">
+              How long does setup take?
+              <svg aria-hidden="true" class="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-muted-foreground leading-relaxed">Most teams are up and running in under 10 minutes. Connect your repo, configure your build settings, and push — that's it. No infrastructure to provision.</div>
+          </details>
+          <details class="group rounded-xl border border-border bg-background" data-animate data-delay="2">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-5 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:rounded-xl [&::-webkit-details-marker]:hidden">
+              Can I use my own domain?
+              <svg aria-hidden="true" class="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-muted-foreground leading-relaxed">Yes. Add your custom domain in the dashboard and we handle SSL certificates automatically. Wildcard domains are supported on Pro and Enterprise plans.</div>
+          </details>
+          <details class="group rounded-xl border border-border bg-background" data-animate data-delay="3">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-5 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:rounded-xl [&::-webkit-details-marker]:hidden">
+              What happens when I exceed the free tier limits?
+              <svg aria-hidden="true" class="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-muted-foreground leading-relaxed">We'll notify you before you hit any limits. Your projects will continue to run — we never take your site down. You can upgrade or optimize at your own pace.</div>
+          </details>
+          <details class="group rounded-xl border border-border bg-background" data-animate data-delay="4">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-5 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:rounded-xl [&::-webkit-details-marker]:hidden">
+              Do you offer refunds?
+              <svg aria-hidden="true" class="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-muted-foreground leading-relaxed">Yes. If you're not happy within the first 30 days of a paid plan, we'll refund you in full — no questions asked.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA / Newsletter ===== -->
+    <section id="contact" class="section-inverted py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mx-auto max-w-2xl text-center" data-animate>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Start building today</h2>
+          <p class="mt-4 text-lg opacity-80">Join thousands of teams shipping faster with Acme. Free to start, no credit card required.</p>
+          <form class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center" action="#" method="post">
+            <label for="email" class="sr-only">Email address</label>
+            <input id="email" name="email" type="email" required placeholder="you@company.com" class="rounded-md border border-border bg-background/10 px-4 py-3 text-sm text-inherit placeholder:opacity-50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-foreground sm:w-72">
+            <button type="submit" class="rounded-md bg-primary-foreground px-6 py-3 text-sm font-medium text-primary hover:opacity-90 transition-opacity">Get started free</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-border py-12">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Brand -->
+        <div>
+          <a href="/" class="text-lg font-bold tracking-tight">Acme</a>
+          <p class="mt-2 text-sm text-muted-foreground">The modern platform for teams who ship.</p>
+        </div>
+        <!-- Product -->
+        <div>
+          <p class="text-sm font-semibold">Product</p>
+          <ul class="mt-3 space-y-2 text-sm text-muted-foreground">
+            <li><a href="#features" class="hover:text-foreground transition-colors">Features</a></li>
+            <li><a href="#pricing" class="hover:text-foreground transition-colors">Pricing</a></li>
+            <li><a href="#faq" class="hover:text-foreground transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+        <!-- Company -->
+        <div>
+          <p class="text-sm font-semibold">Company</p>
+          <ul class="mt-3 space-y-2 text-sm text-muted-foreground">
+            <li><a href="#about" class="hover:text-foreground transition-colors">About</a></li>
+            <li><a href="legal.html" class="hover:text-foreground transition-colors">Legal</a></li>
+          </ul>
+        </div>
+        <!-- Social -->
+        <div>
+          <p class="text-sm font-semibold">Connect</p>
+          <div class="mt-3 flex gap-4">
+            <a href="#" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
+              <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="#" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
+              <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground">
+        <p>&copy; 2026 Acme Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+/* ===== Fonts ===== */
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/GeistMono-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Dark Mode Variant ===== */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ===== Theme: Light Mode (Default) ===== */
+
+@theme {
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(9.8% 0 0);
+  --color-muted: oklch(96% 0 0);
+  --color-muted-foreground: oklch(40% 0 0);
+  --color-border: oklch(91% 0 0);
+  --color-primary: oklch(11% 0 0);
+  --color-primary-foreground: oklch(98% 0 0);
+  --color-accent: oklch(96% 0 0);
+  --color-accent-foreground: oklch(11% 0 0);
+}
+
+/* ===== Dark Mode Overrides ===== */
+
+.dark {
+  --color-background: oklch(7% 0 0);
+  --color-foreground: oklch(98% 0 0);
+  --color-muted: oklch(13% 0 0);
+  --color-muted-foreground: oklch(65% 0 0);
+  --color-border: oklch(22% 0 0);
+  --color-primary: oklch(98% 0 0);
+  --color-primary-foreground: oklch(7% 0 0);
+  --color-accent: oklch(13% 0 0);
+  --color-accent-foreground: oklch(98% 0 0);
+}
+
+/* ===== Base Styles ===== */
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* ===== Section Variants ===== */
+
+.section-muted {
+  background-color: var(--color-muted);
+}
+
+.section-inverted {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+
+/* ===== Scroll Animations ===== */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-animate="fade"] {
+  transform: none;
+}
+[data-animate="fade"].is-visible {
+  opacity: 1;
+}
+
+[data-animate="slide-left"] {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+[data-animate="slide-left"].is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-animate="slide-right"] {
+  opacity: 0;
+  transform: translateX(30px);
+}
+[data-animate="slide-right"].is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-animate="scale"] {
+  opacity: 0;
+  transform: scale(0.95);
+}
+[data-animate="scale"].is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delay utilities */
+[data-delay="1"] { transition-delay: 100ms; }
+[data-delay="2"] { transition-delay: 200ms; }
+[data-delay="3"] { transition-delay: 300ms; }
+[data-delay="4"] { transition-delay: 400ms; }
+[data-delay="5"] { transition-delay: 500ms; }
+
+/* JS-off fallback: elements visible when JS hasn't loaded */
+html:not(.js) [data-animate] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  [data-delay="1"],
+  [data-delay="2"],
+  [data-delay="3"],
+  [data-delay="4"],
+  [data-delay="5"] {
+    transition-delay: 0ms !important;
+  }
+}
+
+/* ===== Card Carousel ===== */
+
+.carousel {
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel:focus-visible {
+  outline: 2px solid var(--color-foreground);
+  outline-offset: 2px;
+  border-radius: 0.75rem;
+}
+
+/* ===== Image Placeholders ===== */
+
+.img-placeholder {
+  background-color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-placeholder svg {
+  color: var(--color-muted-foreground);
+  opacity: 0.5;
+}

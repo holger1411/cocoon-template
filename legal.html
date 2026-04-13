@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal — Acme</title>
+  <meta name="description" content="Legal notice and terms of service for Acme.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <meta property="og:title" content="Legal — Acme">
+  <meta property="og:description" content="Legal notice and terms of service for Acme.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || 'system';
+      var d = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (d) document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="font-sans antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md">
+    Skip to content
+  </a>
+
+  <!-- ===== Navigation ===== -->
+  <header class="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="/" class="text-xl font-bold tracking-tight">Acme</a>
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="index.html#features" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
+        <a href="index.html#about" class="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
+        <a href="index.html#pricing" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+        <a href="index.html#faq" class="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
+        <a href="index.html#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" type="button" aria-label="Toggle theme" class="relative flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">
+          <svg data-theme-icon="light" aria-hidden="true" class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/></svg>
+          <svg data-theme-icon="system" aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          <svg data-theme-icon="dark" aria-hidden="true" class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path d="M21.752 15.002A9.718 9.718 0 0112.478 3.34a9.72 9.72 0 109.274 11.662z"/></svg>
+        </button>
+        <button id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" class="flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors md:hidden">
+          <span class="sr-only">Open menu</span>
+          <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" aria-hidden="true" class="hidden border-t border-border bg-background px-6 py-4 md:hidden">
+      <div class="flex flex-col gap-4">
+        <a href="index.html#features" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
+        <a href="index.html#about" class="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
+        <a href="index.html#pricing" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+        <a href="index.html#faq" class="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
+        <a href="index.html#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== Lead Section ===== -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mx-auto max-w-3xl" data-animate>
+          <a href="index.html" class="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <svg aria-hidden="true" class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>
+            Back to home
+          </a>
+          <h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">Legal Notice</h1>
+          <p class="mt-4 text-lg text-muted-foreground">Last updated April 2026. This page contains our terms of service, privacy policy, and imprint information.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Legal Content ===== -->
+    <section class="pb-20 md:pb-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid gap-12 lg:grid-cols-[1fr_320px]">
+          <!-- Main prose content -->
+          <div class="order-2 lg:order-1">
+
+            <article data-animate>
+              <h2 class="text-2xl font-bold tracking-tight">Terms of Service</h2>
+              <div class="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                <p>By accessing and using the Acme platform ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you may not use the Service.</p>
+                <h3 class="text-lg font-semibold text-foreground pt-4">1. Account Registration</h3>
+                <p>You must provide accurate and complete information when creating an account. You are responsible for maintaining the security of your account credentials and for all activities that occur under your account.</p>
+                <h3 class="text-lg font-semibold text-foreground pt-4">2. Acceptable Use</h3>
+                <p>You agree not to use the Service for any unlawful purpose or in any way that could damage, disable, or impair the Service. You may not attempt to gain unauthorized access to any part of the Service or its related systems.</p>
+                <h3 class="text-lg font-semibold text-foreground pt-4">3. Payment Terms</h3>
+                <p>Paid plans are billed in advance on a monthly or annual basis. All fees are non-refundable except as expressly stated in our refund policy. We reserve the right to change pricing with 30 days notice.</p>
+                <h3 class="text-lg font-semibold text-foreground pt-4">4. Termination</h3>
+                <p>Either party may terminate this agreement at any time. Upon termination, your right to use the Service will immediately cease. We will make your data available for export for 30 days after termination.</p>
+              </div>
+            </article>
+
+            <hr class="my-12 border-border">
+
+            <article data-animate>
+              <h2 class="text-2xl font-bold tracking-tight">Privacy Policy</h2>
+              <div class="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                <p>Your privacy matters to us. This policy explains what data we collect, why we collect it, and how you can manage your information.</p>
+                <h3 class="text-lg font-semibold text-foreground pt-4">Data We Collect</h3>
+                <p>We collect information you provide directly (name, email, payment details) and data generated through your use of the Service (usage logs, device information, IP addresses).</p>
+                <h3 class="text-lg font-semibold text-foreground pt-4">How We Use Your Data</h3>
+                <p>We use your data to provide and improve the Service, process payments, send important notifications, and comply with legal obligations. We never sell your personal data to third parties.</p>
+                <h3 class="text-lg font-semibold text-foreground pt-4">Your Rights</h3>
+                <p>You have the right to access, correct, or delete your personal data at any time. You can export all your data from the dashboard or contact our support team for assistance.</p>
+              </div>
+            </article>
+
+            <hr class="my-12 border-border">
+
+            <article data-animate>
+              <h2 class="text-2xl font-bold tracking-tight">Imprint</h2>
+              <div class="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                <p><strong class="text-foreground">Acme Inc.</strong><br>123 Innovation Drive<br>San Francisco, CA 94105<br>United States</p>
+                <p><strong class="text-foreground">Contact:</strong> hello@acme.example<br><strong class="text-foreground">Registration:</strong> Delaware, USA — File No. 12345678</p>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Sidebar: "In simple terms" boxes -->
+          <aside class="order-1 lg:order-2 lg:sticky lg:top-24 lg:self-start">
+            <div class="space-y-6">
+              <div class="rounded-xl border border-border bg-muted/50 p-6" data-animate="slide-right">
+                <p class="text-xs font-semibold uppercase tracking-widest text-muted-foreground">In simple terms</p>
+                <p class="mt-3 text-sm leading-relaxed">By using Acme, you agree to play fair. Keep your account secure, don't break things on purpose, and pay on time if you're on a paid plan.</p>
+              </div>
+              <div class="rounded-xl border border-border bg-muted/50 p-6" data-animate="slide-right" data-delay="1">
+                <p class="text-xs font-semibold uppercase tracking-widest text-muted-foreground">In simple terms</p>
+                <p class="mt-3 text-sm leading-relaxed">We collect only what we need to run the service. We never sell your data. You can export or delete everything at any time.</p>
+              </div>
+              <div class="rounded-xl border border-border bg-muted/50 p-6" data-animate="slide-right" data-delay="2">
+                <p class="text-xs font-semibold uppercase tracking-widest text-muted-foreground">In simple terms</p>
+                <p class="mt-3 text-sm leading-relaxed">We're a real company with a real address. If you need to reach us, send an email. We respond within one business day.</p>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-border py-12">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <a href="/" class="text-lg font-bold tracking-tight">Acme</a>
+          <p class="mt-2 text-sm text-muted-foreground">The modern platform for teams who ship.</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Product</p>
+          <ul class="mt-3 space-y-2 text-sm text-muted-foreground">
+            <li><a href="index.html#features" class="hover:text-foreground transition-colors">Features</a></li>
+            <li><a href="index.html#pricing" class="hover:text-foreground transition-colors">Pricing</a></li>
+            <li><a href="index.html#faq" class="hover:text-foreground transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Company</p>
+          <ul class="mt-3 space-y-2 text-sm text-muted-foreground">
+            <li><a href="index.html#about" class="hover:text-foreground transition-colors">About</a></li>
+            <li><a href="legal.html" class="hover:text-foreground transition-colors">Legal</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Connect</p>
+          <div class="mt-3 flex gap-4">
+            <a href="#" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
+              <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="#" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
+              <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground">
+        <p>&copy; 2026 Acme Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

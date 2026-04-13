@@ -1,0 +1,17 @@
+{
+  "name": "static-template-framework",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reusable static HTML landing page template built on Tailwind CSS 4",
+  "scripts": {
+    "dev": "concurrently \"npm run watch\" \"npm run serve\"",
+    "build": "npx @tailwindcss/cli -i css/input.css -o css/styles.css --minify",
+    "watch": "npx @tailwindcss/cli -i css/input.css -o css/styles.css --watch",
+    "serve": "browser-sync start --server --files \"*.html, css/styles.css, js/*.js\" --no-notify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.1.4",
+    "browser-sync": "^3.0.3",
+    "concurrently": "^9.1.2"
+  }
+}
