@@ -137,17 +137,28 @@ html:not(.js) [data-animate] {
 
 /* ===== Hero Ring Animation ===== */
 
-.hero-ring {
-  animation: spin-slow 20s linear infinite;
+.hero-ring-1 {
+  transform-origin: 110px 110px;
+  animation: spin-cw 20s linear infinite;
+}
+
+.hero-ring-2 {
+  transform-origin: 260px 110px;
+  animation: spin-ccw 28s linear infinite;
 }
 
 .hero-knob {
   animation: knob-pulse 2s ease-in-out infinite;
 }
 
-@keyframes spin-slow {
+@keyframes spin-cw {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
 }
 
 @keyframes knob-pulse {
@@ -156,7 +167,8 @@ html:not(.js) [data-animate] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-ring,
+  .hero-ring-1,
+  .hero-ring-2,
   .hero-knob {
     animation: none;
   }

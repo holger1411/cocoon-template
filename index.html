@@ -31,19 +31,25 @@
   </a>
 
   <!-- ===== Navigation ===== -->
-  <header class="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md">
-    <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+  <header id="main-header" class="sticky top-0 z-40 w-full bg-background/80 backdrop-blur-md transition-[border-color] duration-300" style="border-bottom: 1px solid transparent">
+    <nav id="main-nav" class="relative mx-auto flex max-w-5xl items-center justify-between px-6 pt-12 pb-0 transition-[padding] duration-300">
       <!-- Logo -->
-      <a href="/" class="text-xl font-bold tracking-tight">Core</a>
+      <a href="/" class="flex items-center gap-2 text-xl font-bold tracking-tight">
+        <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1"/><circle cx="18" cy="10" r="9" stroke="currentColor" stroke-width="1"/></svg>
+        Core
+      </a>
 
-      <!-- Desktop links -->
-      <div class="hidden items-center gap-8 md:flex">
+      <!-- Desktop links (centered) -->
+      <div class="hidden items-center gap-8 md:flex absolute left-1/2 -translate-x-1/2">
         <a href="#features" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
         <a href="#about" class="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
         <a href="#pricing" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
         <a href="#faq" class="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
         <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
       </div>
+
+      <!-- CTA Button -->
+      <a href="#contact" class="hidden md:inline-flex items-center rounded-full bg-white px-5 py-2 text-sm font-medium text-black hover:bg-white/90 transition-opacity">Get started free</a>
 
       <!-- Mobile menu button -->
       <button id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" class="flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors md:hidden">
@@ -67,42 +73,57 @@
   <main id="main">
 
     <!-- ===== Hero Section ===== -->
-    <section class="pt-20 pb-12 md:pt-28 md:pb-16 lg:pt-36 lg:pb-20">
-      <!-- Headline — normal container -->
+    <section class="py-[calc(32px+5vh)]">
+      <!-- Headline + CTA — two column layout -->
       <div class="mx-auto max-w-5xl px-6">
-        <div class="max-w-4xl" data-animate>
-          <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-            Ship faster with the platform your team deserves
-          </h1>
-          <p class="mt-6 max-w-xl text-lg text-muted-foreground">
-            AI is fundamentally changing how products get built. We are shaping what comes next.
-          </p>
+        <div class="grid grid-cols-1 lg:grid-cols-3" data-animate>
+          <div class="lg:col-span-2">
+            <span class="inline-block rounded-full border border-white/30 px-4 py-1.5 text-xs font-medium tracking-wide mb-6">Now in public beta</span>
+            <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
+              Ship faster with the platform your team deserves
+            </h1>
+            <p class="mt-6 max-w-xl text-lg text-muted-foreground">
+              AI is fundamentally changing how products get built. We are shaping what comes next.
+            </p>
+          </div>
         </div>
       </div>
 
       <!-- Hero image — wider container, breaks out, gradient box -->
-      <div class="mx-auto max-w-[88rem] px-6 mt-12 md:mt-16" data-animate data-delay="1">
+      <div id="hero-gradient-wrap" class="mx-auto px-6 mt-12 md:mt-16" style="max-width: 1152px" data-animate data-delay="1">
         <div class="rounded-2xl p-8 md:p-16 flex items-center justify-center" style="background: linear-gradient(to top, rgba(128,134,145,0.3), transparent)">
-          <svg class="hero-ring w-full max-w-lg aspect-square" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <svg class="w-full max-w-3xl" viewBox="0 0 370 220" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="white" stop-opacity="0.9"/>
-                <stop offset="50%" stop-color="white" stop-opacity="0.1"/>
-                <stop offset="100%" stop-color="white" stop-opacity="0.9"/>
+              <linearGradient id="ring-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="white" stop-opacity="0.85"/><stop offset="50%" stop-color="white" stop-opacity="0.08"/><stop offset="100%" stop-color="white" stop-opacity="0.85"/>
               </linearGradient>
-              <filter id="knob-glow">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
+              <linearGradient id="ring-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="white" stop-opacity="0.85"/><stop offset="50%" stop-color="white" stop-opacity="0.08"/><stop offset="100%" stop-color="white" stop-opacity="0.85"/>
+              </linearGradient>
+              <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="5" stroke="white" stroke-width="0.5" opacity="0.1"/>
+              </pattern>
+              <clipPath id="clip-right"><circle cx="260" cy="110" r="95"/></clipPath>
+              <filter id="knob-glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
             </defs>
-            <circle cx="100" cy="100" r="90" stroke="url(#ring-gradient)" stroke-width="0.75" fill="none"/>
-            <!-- Knob sits at top of circle (cx=100, cy=10 = radius 90 from center) -->
-            <g class="hero-knob" filter="url(#knob-glow)">
-              <circle cx="100" cy="10" r="4" fill="white" opacity="0.15"/>
-              <circle cx="100" cy="10" r="1.5" fill="white"/>
+            <!-- Overlap zone: hatch + glow -->
+            <circle cx="110" cy="110" r="95" fill="url(#hatch)" clip-path="url(#clip-right)"/>
+            <circle cx="110" cy="110" r="95" fill="white" opacity="0" clip-path="url(#clip-right)" id="overlap-glow"/>
+            <!-- Circle 1 (left) -->
+            <g class="hero-ring-1">
+              <circle cx="110" cy="110" r="95" stroke="url(#ring-grad-1)" stroke-width="0.75" fill="none"/>
+              <g class="hero-knob" filter="url(#knob-glow)">
+                <circle cx="110" cy="15" r="4" fill="white" opacity="0.15"/>
+                <circle cx="110" cy="15" r="1.5" fill="white"/>
+              </g>
+            </g>
+            <!-- Circle 2 (right) -->
+            <g class="hero-ring-2">
+              <circle cx="260" cy="110" r="95" stroke="url(#ring-grad-2)" stroke-width="0.75" fill="none"/>
+              <g class="hero-knob" filter="url(#knob-glow)">
+                <circle cx="260" cy="205" r="4" fill="white" opacity="0.15"/>
+                <circle cx="260" cy="205" r="1.5" fill="white"/>
+              </g>
             </g>
           </svg>
         </div>
@@ -133,9 +154,9 @@
     </section>
 
     <!-- ===== Trust / Logo Bar ===== -->
-    <section class="border-y border-border py-12">
+    <section class="border-y border-border py-[calc(24px+4vh)]">
       <div class="mx-auto max-w-5xl px-6">
-        <div class="grid grid-cols-3 text-muted-foreground" data-animate="fade">
+        <div class="grid grid-cols-3 text-foreground" data-animate="fade">
           <!-- Arcline -->
           <div class="flex items-center justify-center border-r border-b border-border py-8">
             <svg class="h-7" viewBox="0 0 100 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M0 22C0 10 8 4 16 4s12 4 12 10c0 4-3 7-7 7s-6-2-6-5 2-4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M36 21V9h1.4l.2 2c.8-1.4 2.2-2.2 4-2.2v1.8h-.4c-2 0-3.4 1.2-3.4 3.6V21H36zm11.4.2c-2.6 0-4.4-1.8-4.4-4.4V9h1.8v7.4c0 1.8 1 3 2.8 3s3-1.4 3-3.2V9h1.8v12h-1.4l-.2-1.8c-.8 1.2-2 2-3.4 2zM56 21V9h1.4l.2 2c.8-1.4 2.2-2.2 4-2.2v1.8h-.4c-2 0-3.4 1.2-3.4 3.6V21H56zm13 .2c-3.4 0-5.6-2.6-5.6-6.2s2.2-6.2 5.6-6.2c2 0 3.4.8 4.2 2l-1.2 1c-.6-.8-1.6-1.4-3-1.4-2.4 0-3.8 1.8-3.8 4.6s1.4 4.6 3.8 4.6c1.4 0 2.4-.6 3-1.4l1.2 1c-.8 1.2-2.2 2-4.2 2z"/></svg>
@@ -164,233 +185,124 @@
       </div>
     </section>
 
-    <!-- ===== Features ===== -->
-    <section id="features" class="py-20 md:py-28">
-      <div class="mx-auto max-w-5xl px-6">
-        <div class="mx-auto max-w-2xl text-center" data-animate>
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Everything you need to ship</h2>
-          <p class="mt-4 text-lg text-muted-foreground">Built for modern teams who value speed and simplicity.</p>
-        </div>
-        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Feature 1 -->
-          <div class="rounded-xl border border-border p-8" data-animate data-delay="1">
-            <div class="img-placeholder mb-6 h-12 w-12 rounded-lg">
-              <svg aria-hidden="true" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
-            </div>
-            <h3 class="text-lg font-semibold">Lightning fast builds</h3>
-            <p class="mt-2 text-sm text-muted-foreground">Deploy in seconds, not minutes. Our build pipeline is optimized for speed without compromising reliability.</p>
-          </div>
-          <!-- Feature 2 -->
-          <div class="rounded-xl border border-border p-8" data-animate data-delay="2">
-            <div class="img-placeholder mb-6 h-12 w-12 rounded-lg">
-              <svg aria-hidden="true" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
-            </div>
-            <h3 class="text-lg font-semibold">Team collaboration</h3>
-            <p class="mt-2 text-sm text-muted-foreground">Real-time editing, shared workspaces, and smart notifications keep everyone aligned without the noise.</p>
-          </div>
-          <!-- Feature 3 -->
-          <div class="rounded-xl border border-border p-8" data-animate data-delay="3">
-            <div class="img-placeholder mb-6 h-12 w-12 rounded-lg">
-              <svg aria-hidden="true" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-            </div>
-            <h3 class="text-lg font-semibold">Enterprise security</h3>
-            <p class="mt-2 text-sm text-muted-foreground">SOC 2 compliant, end-to-end encrypted, with granular access controls. Your data stays yours.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ===== Features Zigzag ===== -->
+    <section class="py-[calc(24px+4vh)]">
+      <div class="mx-auto max-w-5xl px-6 space-y-20 md:space-y-28">
 
-    <!-- ===== About / Content Block ===== -->
-    <section id="about" class="section-muted py-20 md:py-28">
-      <div class="mx-auto max-w-5xl px-6">
-        <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <div data-animate="slide-left">
-            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Why Core</p>
-            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Built by engineers,<br>designed for everyone</h2>
-            <p class="mt-6 text-muted-foreground leading-relaxed">
-              We started Core because we were tired of stitching together five different tools just to ship a feature. Our platform replaces the chaos with a single, cohesive workflow that your entire team can rally around.
-            </p>
-            <p class="mt-4 text-muted-foreground leading-relaxed">
-              From the first commit to production deploy, every step lives in one place. No more lost context, no more tab overload.
-            </p>
+        <!-- Row 1: Text left, Image right — Team Activity -->
+        <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16" data-animate>
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Automation</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Workflows that run themselves</h2>
+            <p class="mt-4 text-muted-foreground leading-relaxed">Set up triggers, conditions, and actions — then let Core handle the rest. From lead routing to team notifications, your processes run on autopilot.</p>
           </div>
-          <div data-animate="slide-right" data-delay="2">
-            <img src="img/whiteboard-planning.jpg" alt="Engineer planning product architecture on whiteboard" class="aspect-[4/3] w-full rounded-xl border border-border object-cover" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Card Carousel ===== -->
-    <section class="py-20 md:py-28">
-      <div class="mx-auto max-w-5xl px-6 mb-12">
-        <div class="max-w-2xl" data-animate>
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Explore what's possible</h2>
-          <p class="mt-4 text-lg text-muted-foreground">From prototyping to production, Core adapts to your workflow.</p>
-        </div>
-      </div>
-      <!-- Wrapper: aligns left edge with container, breaks out right via negative margin -->
-      <div class="mx-auto max-w-5xl px-6">
-        <div
-          class="carousel overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 -mr-[calc(50vw-50%)] pr-4"
-          role="region"
-          aria-label="Feature showcase carousel — scroll horizontally or use arrow keys"
-          tabindex="0"
-        >
-          <div class="flex gap-6">
-          <!-- Card 1 -->
-          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="1">
-            <img src="img/man-writing-notes.jpeg" alt="Developer writing notes at desk" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
-            <div class="p-5">
-              <h3 class="font-semibold">Developer tools</h3>
-              <p class="mt-2 text-sm text-muted-foreground">Integrated CLI, API docs, and SDKs that feel like they were built for you.</p>
-            </div>
-          </article>
-          <!-- Card 2 -->
-          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="2">
-            <img src="img/woman-at-desk.jpg" alt="Professional working at modern desk" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
-            <div class="p-5">
-              <h3 class="font-semibold">Analytics dashboard</h3>
-              <p class="mt-2 text-sm text-muted-foreground">Real-time metrics, custom reports, and alerts so you always know what's happening.</p>
-            </div>
-          </article>
-          <!-- Card 3 -->
-          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="3">
-            <img src="img/office-hallway.jpg" alt="Modern office hallway with plants" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
-            <div class="p-5">
-              <h3 class="font-semibold">Managed database</h3>
-              <p class="mt-2 text-sm text-muted-foreground">Postgres, Redis, and object storage — fully managed, auto-scaling, zero config.</p>
-            </div>
-          </article>
-          <!-- Card 4 -->
-          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="4">
-            <img src="img/minimal-workspace.jpg" alt="Minimalist workspace with clean design" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
-            <div class="p-5">
-              <h3 class="font-semibold">Global CDN</h3>
-              <p class="mt-2 text-sm text-muted-foreground">Edge caching in 50+ regions. Your users get sub-100ms load times, everywhere.</p>
-            </div>
-          </article>
-          <!-- Card 5 -->
-          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate data-delay="5">
-            <img src="img/team-meeting.jpg" alt="Team meeting around a table" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
-            <div class="p-5">
-              <h3 class="font-semibold">CI/CD pipelines</h3>
-              <p class="mt-2 text-sm text-muted-foreground">Automatic builds, tests, and deploys on every push. Zero config, infinite flexibility.</p>
-            </div>
-          </article>
-          <!-- Card 6 -->
-          <article class="flex-shrink-0 w-72 snap-start rounded-xl border border-border bg-background p-1 sm:w-80" data-animate>
-            <img src="img/woman-at-laptop.jpg" alt="Professional working at laptop in coworking space" class="aspect-[3/2] w-full rounded-lg object-cover" loading="lazy">
-            <div class="p-5">
-              <h3 class="font-semibold">Team chat</h3>
-              <p class="mt-2 text-sm text-muted-foreground">Built-in messaging with threads, mentions, and code snippets. No more switching to Slack.</p>
-            </div>
-          </article>
-          <!-- Right padding spacer -->
-          <div class="flex-shrink-0 w-8" aria-hidden="true"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Testimonials ===== -->
-    <section class="section-muted py-20 md:py-28">
-      <div class="mx-auto max-w-5xl px-6">
-        <div class="mx-auto max-w-2xl text-center" data-animate>
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Loved by teams everywhere</h2>
-        </div>
-        <div class="mt-16 grid gap-8 md:grid-cols-3">
-          <!-- Testimonial 1 -->
-          <blockquote class="rounded-xl border border-border bg-background p-8" data-animate data-delay="1">
-            <p class="text-sm leading-relaxed text-muted-foreground">"Core cut our deploy time from 20 minutes to under 2. The team has never shipped this fast — and we're a 50-person engineering org."</p>
-            <div class="mt-6 flex items-center gap-3">
-              <img src="img/woman-in-office.jpg" alt="Sarah Chen" class="h-10 w-10 rounded-full object-cover" loading="lazy">
-              <div>
-                <p class="text-sm font-semibold">Sarah Chen</p>
-                <p class="text-xs text-muted-foreground">VP Engineering, Raycast</p>
+          <div class="relative rounded-2xl overflow-hidden h-80 md:h-96 flex items-center justify-center p-6 bg-black" data-fade-bg>
+            <div class="absolute inset-0 transition-opacity duration-100" style="background: url('img/floral1.jpg') center/cover no-repeat; opacity: 0.05"></div>
+            <div class="relative w-full max-w-[260px]">
+              <div class="rounded-2xl bg-white/95 backdrop-blur-sm p-5 shadow-lg">
+                <div class="flex items-center justify-between mb-5">
+                  <span class="text-[11px] font-semibold text-gray-900">Team Activity</span>
+                  <span class="text-[10px] text-gray-400">Live</span>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div class="mt-0.5 h-5 w-5 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0"><div class="h-1.5 w-1.5 rounded-full bg-emerald-500"></div></div>
+                    <div><p class="text-[11px] font-medium text-gray-800">Deploy <span class="text-gray-400 font-normal">v2.4.1</span> succeeded</p><p class="text-[9px] text-gray-400 mt-0.5">2 min ago</p></div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="mt-0.5 h-5 w-5 rounded-full bg-blue-500/10 flex items-center justify-center flex-shrink-0"><div class="h-1.5 w-1.5 rounded-full bg-blue-500"></div></div>
+                    <div><p class="text-[11px] font-medium text-gray-800">PR #218 merged to <span class="font-mono text-[10px] bg-gray-100 rounded px-1">main</span></p><p class="text-[9px] text-gray-400 mt-0.5">8 min ago</p></div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="mt-0.5 h-5 w-5 rounded-full bg-amber-500/10 flex items-center justify-center flex-shrink-0"><div class="h-1.5 w-1.5 rounded-full bg-amber-500"></div></div>
+                    <div><p class="text-[11px] font-medium text-gray-800">Build queued — <span class="text-gray-400 font-normal">staging</span></p><p class="text-[9px] text-gray-400 mt-0.5">12 min ago</p></div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="mt-0.5 h-5 w-5 rounded-full bg-violet-500/10 flex items-center justify-center flex-shrink-0"><div class="h-1.5 w-1.5 rounded-full bg-violet-500"></div></div>
+                    <div><p class="text-[11px] font-medium text-gray-800">New comment on <span class="text-gray-400 font-normal">#214</span></p><p class="text-[9px] text-gray-400 mt-0.5">25 min ago</p></div>
+                  </div>
+                </div>
               </div>
             </div>
-          </blockquote>
-          <!-- Testimonial 2 -->
-          <blockquote class="rounded-xl border border-border bg-background p-8" data-animate data-delay="2">
-            <p class="text-sm leading-relaxed text-muted-foreground">"We evaluated 12 tools before choosing Core. Nothing else came close in terms of developer experience. It just works."</p>
-            <div class="mt-6 flex items-center gap-3">
-              <img src="img/man-laughing.jpg" alt="Marcus Rivera" class="h-10 w-10 rounded-full object-cover" loading="lazy">
-              <div>
-                <p class="text-sm font-semibold">Marcus Rivera</p>
-                <p class="text-xs text-muted-foreground">CTO, Basecamp</p>
-              </div>
-            </div>
-          </blockquote>
-          <!-- Testimonial 3 -->
-          <blockquote class="rounded-xl border border-border bg-background p-8" data-animate data-delay="3">
-            <p class="text-sm leading-relaxed text-muted-foreground">"The built-in analytics alone saved us $2k/month. Add the deployment speed and team features, and Core is an absolute no-brainer."</p>
-            <div class="mt-6 flex items-center gap-3">
-              <img src="img/woman-at-desk.jpg" alt="Aisha Patel" class="h-10 w-10 rounded-full object-cover" loading="lazy">
-              <div>
-                <p class="text-sm font-semibold">Aisha Patel</p>
-                <p class="text-xs text-muted-foreground">Head of Product, Linear</p>
-              </div>
-            </div>
-          </blockquote>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ===== Pricing ===== -->
-    <section id="pricing" class="py-20 md:py-28">
-      <div class="mx-auto max-w-5xl px-6">
-        <div class="mx-auto max-w-2xl text-center" data-animate>
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Simple, transparent pricing</h2>
-          <p class="mt-4 text-lg text-muted-foreground">Start free. Upgrade when you're ready.</p>
-        </div>
-        <div class="mt-16 grid gap-8 lg:grid-cols-3">
-          <!-- Free -->
-          <div class="rounded-xl border border-border p-8" data-animate data-delay="1">
-            <h3 class="text-lg font-semibold">Starter</h3>
-            <p class="mt-2 text-sm text-muted-foreground">For individuals and small projects.</p>
-            <p class="mt-6"><span class="text-4xl font-bold">$0</span><span class="text-sm text-muted-foreground">/month</span></p>
-            <ul class="mt-8 space-y-3 text-sm text-muted-foreground">
-              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Up to 3 projects</li>
-              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>1 GB storage</li>
-              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Community support</li>
-            </ul>
-            <a href="#contact" class="mt-8 inline-flex w-full items-center justify-center rounded-md border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted transition-colors">Get started</a>
+        <!-- Row 2: Image left, Text right — Uptime Monitor -->
+        <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16" data-animate>
+          <div class="relative rounded-2xl overflow-hidden h-80 md:h-96 flex items-center justify-center p-6 lg:order-none order-last bg-black" data-fade-bg>
+            <div class="absolute inset-0 transition-opacity duration-100" style="background: url('img/floral4.jpg') center/cover no-repeat; opacity: 0.05"></div>
+            <div class="relative w-full max-w-[260px]">
+              <div class="rounded-2xl bg-white/95 backdrop-blur-sm p-5 shadow-lg">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-[11px] font-semibold text-gray-900">Uptime</span>
+                  <span class="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[9px] font-semibold text-emerald-600">Healthy</span>
+                </div>
+                <p class="text-3xl font-bold text-gray-900 tracking-tight">99.98<span class="text-lg text-gray-400">%</span></p>
+                <p class="text-[10px] text-gray-400 mt-1">Last 90 days</p>
+                <div class="mt-4 flex gap-[3px]">
+                  <div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-amber-400"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div><div class="h-6 w-full rounded-sm bg-emerald-500"></div>
+                </div>
+                <div class="mt-3 grid grid-cols-3 gap-2">
+                  <div class="rounded-lg bg-gray-50 p-2 text-center"><p class="text-xs font-bold text-gray-900">42ms</p><p class="text-[9px] text-gray-400">Avg latency</p></div>
+                  <div class="rounded-lg bg-gray-50 p-2 text-center"><p class="text-xs font-bold text-gray-900">2.1M</p><p class="text-[9px] text-gray-400">Requests</p></div>
+                  <div class="rounded-lg bg-gray-50 p-2 text-center"><p class="text-xs font-bold text-gray-900">0</p><p class="text-[9px] text-gray-400">Incidents</p></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- Pro (recommended) -->
-          <div class="relative rounded-xl border-2 border-foreground p-8" data-animate data-delay="2">
-            <span class="absolute -top-3 left-6 rounded-full bg-foreground px-3 py-0.5 text-xs font-medium text-background">Most popular</span>
-            <h3 class="text-lg font-semibold">Pro</h3>
-            <p class="mt-2 text-sm text-muted-foreground">For growing teams that need more power.</p>
-            <p class="mt-6"><span class="text-4xl font-bold">$29</span><span class="text-sm text-muted-foreground">/month</span></p>
-            <ul class="mt-8 space-y-3 text-sm text-muted-foreground">
-              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Unlimited projects</li>
-              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>50 GB storage</li>
-              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Priority support</li>
-              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Team collaboration</li>
-            </ul>
-            <a href="#contact" class="mt-8 inline-flex w-full items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:opacity-90 transition-opacity">Start free trial</a>
-          </div>
-          <!-- Enterprise -->
-          <div class="rounded-xl border border-border p-8" data-animate data-delay="3">
-            <h3 class="text-lg font-semibold">Enterprise</h3>
-            <p class="mt-2 text-sm text-muted-foreground">For organizations with advanced needs.</p>
-            <p class="mt-6"><span class="text-4xl font-bold">Custom</span></p>
-            <ul class="mt-8 space-y-3 text-sm text-muted-foreground">
-              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Everything in Pro</li>
-              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>SSO &amp; SAML</li>
-              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Dedicated account manager</li>
-              <li class="flex items-center gap-2"><svg aria-hidden="true" class="h-4 w-4 text-foreground" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Custom SLA</li>
-            </ul>
-            <a href="#contact" class="mt-8 inline-flex w-full items-center justify-center rounded-md border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted transition-colors">Contact sales</a>
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Reliability</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Always on, always fast</h2>
+            <p class="mt-4 text-muted-foreground leading-relaxed">Monitor every endpoint in real time. Instant alerts when something dips, historical data when you need to debug. Your users notice downtime — make sure you notice it first.</p>
           </div>
         </div>
+
+        <!-- Row 3: Text left, Image right — Spend Breakdown -->
+        <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16" data-animate>
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Insights</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Know where every dollar goes</h2>
+            <p class="mt-4 text-muted-foreground leading-relaxed">From compute costs to storage, see exactly what you're spending and where. Set budgets, get alerts, and optimize before the bill surprises you.</p>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden h-80 md:h-96 flex items-center justify-center p-6 bg-black" data-fade-bg>
+            <div class="absolute inset-0 transition-opacity duration-100" style="background: url('img/floral7.jpg') center/cover no-repeat; opacity: 0.05"></div>
+            <div class="relative w-full max-w-[260px]">
+              <div class="rounded-2xl bg-white/95 backdrop-blur-sm p-5 shadow-lg">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[11px] font-semibold text-gray-900">Monthly Spend</span>
+                  <span class="text-[10px] text-gray-400">Apr 2026</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-2xl font-bold text-gray-900 tracking-tight">$4,280</span>
+                  <span class="text-[10px] text-emerald-500 font-semibold">-12%</span>
+                </div>
+                <div class="mt-4 h-3 w-full rounded-full bg-gray-100 flex overflow-hidden">
+                  <div class="h-full bg-gray-900 rounded-l-full" style="width: 45%"></div>
+                  <div class="h-full bg-gray-400" style="width: 28%"></div>
+                  <div class="h-full bg-gray-300" style="width: 17%"></div>
+                  <div class="h-full bg-gray-200 rounded-r-full" style="width: 10%"></div>
+                </div>
+                <div class="mt-4 space-y-2.5">
+                  <div class="flex items-center justify-between"><div class="flex items-center gap-2"><div class="h-2 w-2 rounded-full bg-gray-900"></div><span class="text-[10px] text-gray-600">Compute</span></div><span class="text-[11px] font-semibold text-gray-900">$1,926</span></div>
+                  <div class="flex items-center justify-between"><div class="flex items-center gap-2"><div class="h-2 w-2 rounded-full bg-gray-400"></div><span class="text-[10px] text-gray-600">Bandwidth</span></div><span class="text-[11px] font-semibold text-gray-900">$1,198</span></div>
+                  <div class="flex items-center justify-between"><div class="flex items-center gap-2"><div class="h-2 w-2 rounded-full bg-gray-300"></div><span class="text-[10px] text-gray-600">Storage</span></div><span class="text-[11px] font-semibold text-gray-900">$728</span></div>
+                  <div class="flex items-center justify-between"><div class="flex items-center gap-2"><div class="h-2 w-2 rounded-full bg-gray-200"></div><span class="text-[10px] text-gray-600">Other</span></div><span class="text-[11px] font-semibold text-gray-900">$428</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ===== FAQ ===== -->
-    <section id="faq" class="section-muted py-20 md:py-28">
-      <div class="mx-auto max-w-3xl px-6">
+    <section id="faq" class="py-[calc(24px+4vh)]">
+      <div id="faq-gradient-wrap" class="mx-auto px-6" style="max-width: 1152px">
+        <div class="relative rounded-2xl py-[calc(24px+4vh)] px-6 overflow-hidden">
+          <div class="absolute inset-0" style="background: url('img/floral10.jpg') center/cover no-repeat"></div>
+          <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.85), transparent)"></div>
+      <div class="relative mx-auto max-w-3xl">
         <div class="text-center" data-animate>
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Frequently asked questions</h2>
         </div>
@@ -425,20 +337,20 @@
           </details>
         </div>
       </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== CTA / Newsletter ===== -->
-    <section id="contact" class="section-inverted py-32 md:py-44 lg:py-56">
-      <div class="mx-auto max-w-5xl px-6">
-        <div class="mx-auto max-w-2xl text-center" data-animate>
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Start building today</h2>
-          <p class="mt-4 text-lg opacity-80">Join thousands of teams shipping faster with Core. Free to start, no credit card required.</p>
-          <form class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center" action="#" method="post">
-            <label for="email" class="sr-only">Email address</label>
-            <input id="email" name="email" type="email" required placeholder="you@company.com" class="rounded-md border border-border bg-background/10 px-4 py-3 text-sm text-inherit placeholder:opacity-50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-foreground sm:w-72">
-            <button type="submit" class="rounded-md bg-primary-foreground px-6 py-3 text-sm font-medium text-primary hover:opacity-90 transition-opacity">Get started free</button>
-          </form>
-        </div>
+    <section id="contact" class="py-[calc(48px+8vh)]">
+      <div class="mx-auto max-w-2xl px-6 text-center" data-animate>
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Start building today</h2>
+        <p class="mt-4 text-lg text-muted-foreground">Join thousands of teams shipping faster with Core. Free to start, no credit card required.</p>
+        <form class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center" action="#" method="post">
+          <label for="email" class="sr-only">Email address</label>
+          <input id="email" name="email" type="email" required placeholder="you@company.com" class="rounded-md border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-foreground sm:w-72">
+          <button type="submit" class="rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">Get started free</button>
+        </form>
       </div>
     </section>
 
@@ -450,7 +362,10 @@
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <!-- Brand -->
         <div>
-          <a href="/" class="text-lg font-bold tracking-tight">Core</a>
+          <a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight">
+            <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1"/><circle cx="18" cy="10" r="9" stroke="currentColor" stroke-width="1"/></svg>
+            Core
+          </a>
           <p class="mt-2 text-sm text-muted-foreground">The modern platform for teams who ship.</p>
         </div>
         <!-- Product -->
