@@ -47,7 +47,8 @@
 
     var containers = [
       document.getElementById('hero-gradient-wrap'),
-      document.getElementById('faq-gradient-wrap')
+      document.getElementById('faq-gradient-wrap'),
+      document.getElementById('pricing-gradient-wrap')
     ].filter(Boolean);
 
     if (!containers.length) return;
@@ -237,6 +238,57 @@
           carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         }
       });
+    });
+  });
+
+  // ===== Contact Card Glow on Scroll =====
+  (function () {
+    var card = document.getElementById('contact-card');
+    if (!card) return;
+    var section = document.getElementById('contact');
+
+    function update() {
+      var rect = section.getBoundingClientRect();
+      var vh = window.innerHeight;
+      // Start: bottom of viewport hits top of section (rect.top <= vh)
+      // End: bottom of viewport hits bottom of section (rect.bottom <= vh)
+      var start = vh; // rect.top value when section top enters viewport bottom
+      var range = rect.height;
+      if (range <= 0) return;
+      var progress = Math.min(1, Math.max(0, (start - rect.top) / range));
+      var opacity = (progress * 0.4).toFixed(3);
+      card.style.boxShadow = '0 0 160px 60px rgba(100,100,100,' + opacity + ')';
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+
+  // ===== Dialog Open / Close / Scroll Lock =====
+  document.querySelectorAll('[data-open-dialog]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-open-dialog');
+      var dialog = document.getElementById(id);
+      if (dialog) {
+        dialog.showModal();
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-close-dialog]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var dialog = btn.closest('dialog');
+      if (dialog) dialog.close();
+    });
+  });
+
+  document.querySelectorAll('dialog').forEach(function (dialog) {
+    dialog.addEventListener('click', function (e) {
+      if (e.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', function () {
+      document.body.style.overflow = '';
     });
   });
 })();

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Core — The modern platform for teams</title>
-  <meta name="description" content="Core helps teams ship faster with integrated tools for planning, building, and deploying.">
+  <title>Core — AI Consulting that builds, not just advises</title>
+  <meta name="description" content="Core is a two-person AI consultancy. We find the real problems, quantify them, and build working solutions. No slide decks — working prototypes.">
 
   <!-- Favicon (replace with your own) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Core — The modern platform for teams">
-  <meta property="og:description" content="Core helps teams ship faster with integrated tools for planning, building, and deploying.">
+  <meta property="og:title" content="Core — AI Consulting that builds, not just advises">
+  <meta property="og:description" content="Core is a two-person AI consultancy. We find the real problems, quantify them, and build working solutions.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://example.com">
   <meta property="og:image" content="https://example.com/og-image.png">
@@ -21,6 +21,13 @@
 
   <!-- Fonts are loaded via CSS @font-face -->
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    dialog[open] { display: flex; flex-direction: column; animation: modal-in 0.25s ease-out; }
+    dialog::backdrop { background: rgba(0,0,0,0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); animation: backdrop-in 0.25s ease-out; }
+    @keyframes timeline-pulse { 0%, 100% { box-shadow: 0 0 8px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.3); } 50% { box-shadow: 0 0 14px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.4); } }
+    @keyframes modal-in { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    @keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+  </style>
   <script src="js/main.js" defer></script>
 </head>
 <body class="font-sans antialiased">
@@ -41,15 +48,15 @@
 
       <!-- Desktop links (centered) -->
       <div class="hidden items-center gap-8 md:flex absolute left-1/2 -translate-x-1/2">
-        <a href="#features" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
         <a href="#about" class="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
+        <a href="#features" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Approach</a>
+        <a href="#team" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Team</a>
         <a href="#pricing" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
-        <a href="#faq" class="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
         <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
       </div>
 
       <!-- CTA Button -->
-      <a href="#contact" class="hidden md:inline-flex items-center rounded-full bg-white px-5 py-2 text-sm font-medium text-black hover:bg-white/90 transition-opacity">Get started free</a>
+      <a href="#contact" class="hidden md:inline-flex items-center rounded-full bg-white px-5 py-2 text-sm font-medium text-black hover:bg-white/90 transition-opacity">Talk to us</a>
 
       <!-- Mobile menu button -->
       <button id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" class="flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors md:hidden">
@@ -61,10 +68,10 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" aria-hidden="true" class="hidden border-t border-border bg-background px-6 py-4 md:hidden">
       <div class="flex flex-col gap-4">
-        <a href="#features" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
         <a href="#about" class="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
+        <a href="#features" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Approach</a>
+        <a href="#team" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Team</a>
         <a href="#pricing" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
-        <a href="#faq" class="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
         <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
       </div>
     </div>
@@ -73,17 +80,17 @@
   <main id="main">
 
     <!-- ===== Hero Section ===== -->
-    <section class="py-[calc(32px+5vh)]">
+    <section id="about" class="py-[calc(32px+5vh)]">
       <!-- Headline + CTA — two column layout -->
       <div class="mx-auto max-w-5xl px-6">
         <div class="grid grid-cols-1 lg:grid-cols-3" data-animate>
           <div class="lg:col-span-2">
-            <span class="inline-block rounded-full border border-white/30 px-4 py-1.5 text-xs font-medium tracking-wide mb-6">Now in public beta</span>
+            <span class="inline-block rounded-full border border-white/30 px-4 py-1.5 text-xs font-medium tracking-wide mb-6">AI Consulting</span>
             <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
-              Ship faster with the platform your team deserves
+              We find the problem. We build the fix. We prove it works.
             </h1>
             <p class="mt-6 max-w-xl text-lg text-muted-foreground">
-              AI is fundamentally changing how products get built. We are shaping what comes next.
+              Core is a two-person AI consultancy that goes deep into organizations, identifies the real bottlenecks, and delivers working solutions — not slide decks.
             </p>
           </div>
         </div>
@@ -133,7 +140,7 @@
       <div class="mx-auto max-w-5xl px-6">
         <div class="mt-12 grid gap-8 md:mt-16 md:grid-cols-3 md:gap-12" data-animate data-delay="2">
           <div>
-            <h2 class="text-2xl font-medium tracking-tight sm:text-3xl">A new species of product tool</h2>
+            <h2 class="text-2xl font-medium tracking-tight sm:text-3xl">A new kind of consulting</h2>
             <div class="mt-6 flex items-center">
               <img src="img/teammember 11.jpeg" alt="Lisa Bergmann" class="h-12 w-12 rounded-full object-cover ring-2 ring-background">
               <img src="img/teammember3.jpeg" alt="Sarah Chen" class="h-12 w-12 rounded-full object-cover ring-2 ring-background -ml-3">
@@ -141,16 +148,13 @@
           </div>
           <div class="md:col-span-2">
             <p class="text-lg font-medium text-foreground leading-relaxed">
-              Software development is at an inflection point. Artificial intelligence is fundamentally reshaping how products are built.
+              Most consultants tell you what's wrong. We show you it's fixed.
             </p>
             <p class="mt-4 text-muted-foreground leading-relaxed">
-              At Core, we are building the tools for this new era of product development. A purpose-built system where teams and agents operate together in a single, cohesive environment. Less context switching, more shipping.
+              Core was founded by Lisa Bergmann and Sarah Chen — a technologist who thinks in products and a strategist who thinks in systems. Two very different minds, united by a shared obsession: understanding users and leveraging AI to solve real problems.
             </p>
             <p class="mt-4 text-muted-foreground leading-relaxed">
-              Founded in 2024, Core has become the tool of choice for more than 25,000 companies including Figma, Coinbase, and Ramp to plan, build, and ship their products. Our team is distributed across North America and Europe, and we're continuing to grow intentionally.
-            </p>
-            <p class="mt-4 text-muted-foreground leading-relaxed">
-              What unites us is a relentless focus, fast execution, and a deep care for the craft of software development.
+              We work across department lines. We quantify what others describe with adjectives. And when we find the biggest lever, we don't hand you a report — we build the solution, deploy it, and prove it works. Then we hand it over.
             </p>
           </div>
         </div>
@@ -189,16 +193,16 @@
       </div>
     </section>
 
-    <!-- ===== Features Zigzag ===== -->
-    <section class="py-[calc(24px+4vh)]">
+    <!-- ===== Approach Zigzag ===== -->
+    <section id="features" class="py-[calc(24px+4vh)]">
       <div class="mx-auto max-w-5xl px-6 space-y-20 md:space-y-28">
 
         <!-- Row 1: Text left, Image right — Team Activity -->
         <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16" data-animate>
           <div>
-            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Automation</p>
-            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Workflows that run themselves</h2>
-            <p class="mt-4 text-muted-foreground leading-relaxed">Set up triggers, conditions, and actions — then let Core handle the rest. From lead routing to team notifications, your processes run on autopilot.</p>
+            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Discover</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Find the problems nobody can name</h2>
+            <p class="mt-4 text-muted-foreground leading-relaxed">We go querfeldein — across departments, hierarchies, and silos. Not the usual top-down workshop, but real immersion: talking to teams, observing processes, analyzing data. We surface the problems that everyone feels but nobody can articulate.</p>
           </div>
           <div class="relative rounded-2xl overflow-hidden h-80 md:h-96 flex items-center justify-center p-6 bg-black" data-fade-bg>
             <div class="absolute inset-0 transition-opacity duration-100" style="background: url('img/floral1.jpg') center/cover no-repeat; opacity: 0.05"></div>
@@ -255,18 +259,18 @@
             </div>
           </div>
           <div>
-            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Reliability</p>
-            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Always on, always fast</h2>
-            <p class="mt-4 text-muted-foreground leading-relaxed">Monitor every endpoint in real time. Instant alerts when something dips, historical data when you need to debug. Your users notice downtime — make sure you notice it first.</p>
+            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Quantify</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Make every problem measurable</h2>
+            <p class="mt-4 text-muted-foreground leading-relaxed">Gut feelings don't survive budget meetings. We quantify and qualify every problem we find. What does it cost the business? How many people does it affect? Where's the biggest lever? Data-driven prioritization, not PowerPoint intuition.</p>
           </div>
         </div>
 
         <!-- Row 3: Text left, Image right — Spend Breakdown -->
         <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16" data-animate>
           <div>
-            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Insights</p>
-            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Know where every dollar goes</h2>
-            <p class="mt-4 text-muted-foreground leading-relaxed">From compute costs to storage, see exactly what you're spending and where. Set budgets, get alerts, and optimize before the bill surprises you.</p>
+            <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Build</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Ship the solution, prove it works</h2>
+            <p class="mt-4 text-muted-foreground leading-relaxed">This is where we're different. We don't stop at recommendations. We design the solution, build it, deploy it, and measure the results. Prototype, pilot, proof. Only then do we hand it over. No "you should probably do X" — we do X.</p>
           </div>
           <div class="relative rounded-2xl overflow-hidden h-80 md:h-96 flex items-center justify-center p-6 bg-black" data-fade-bg>
             <div class="absolute inset-0 transition-opacity duration-100" style="background: url('img/floral7.jpg') center/cover no-repeat; opacity: 0.05"></div>
@@ -301,7 +305,7 @@
     </section>
 
     <!-- ===== Founders ===== -->
-    <section>
+    <section id="team">
       <div id="faq-gradient-wrap" class="mx-auto px-6" style="max-width: 1152px">
         <div class="relative rounded-2xl py-[calc(48px+8vh)] px-6 overflow-hidden">
           <div class="absolute inset-0" style="background: url('img/floral5.jpg') center/cover no-repeat"></div>
@@ -313,7 +317,7 @@
             <div class="flex items-center">
               <div>
                 <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our founding duo</h2>
-                <p class="mt-4 text-white/70 leading-relaxed">Two builders who met scaling infrastructure at the world's fastest-growing companies — and decided to start their own.</p>
+                <p class="mt-4 text-white/70 leading-relaxed">A technologist who thinks like a designer and a strategist who thinks in systems. Different expertise, shared obsession.</p>
               </div>
             </div>
             <!-- Lisa -->
@@ -323,7 +327,7 @@
               <div class="p-8 md:p-10">
                 <p class="text-sm font-semibold">Lisa Bergmann</p>
                 <p class="text-sm text-muted-foreground">Co-founder & CTO</p>
-                <p class="mt-3 text-sm text-muted-foreground leading-relaxed">Former Staff Engineer at Vercel. Six years building deploy pipelines that serve millions of requests per second.</p>
+                <p class="mt-3 text-sm text-muted-foreground leading-relaxed">Engineer with a rare eye for product design. Builds systems and interfaces in the same breath. Ex Vercel.</p>
                 <a href="#" class="mt-3 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
                   <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                   LinkedIn
@@ -338,7 +342,7 @@
               <div class="p-8 md:p-10">
                 <p class="text-sm font-semibold">Sarah Chen</p>
                 <p class="text-sm text-muted-foreground">Co-founder & CEO</p>
-                <p class="mt-3 text-sm text-muted-foreground leading-relaxed">Previously VP of Engineering at Stripe. A decade of turning complex developer problems into products teams love.</p>
+                <p class="mt-3 text-sm text-muted-foreground leading-relaxed">Strategist who reads business models like source code. Spots where companies leak value. Ex Stripe.</p>
                 <a href="#" class="mt-3 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
                   <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                   LinkedIn
@@ -353,11 +357,167 @@
       </div>
     </section>
 
+    <!-- ===== Timeline ===== -->
+    <section class="py-[calc(48px+8vh)]">
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2" style="gap: 6rem">
+          <!-- Left: Sticky heading -->
+          <div class="md:sticky md:top-32 md:self-start">
+            <span class="inline-block rounded-full border border-white/30 px-4 py-1.5 text-xs font-medium tracking-wide mb-6">Our Story</span>
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">From a shared frustration to a new kind of firm</h2>
+            <p class="mt-4 text-muted-foreground leading-relaxed">Lisa and Sarah kept running into the same problem — consultants who diagnosed but never built. In 2024 they decided to do it differently.</p>
+          </div>
+          <!-- Right: Timeline -->
+          <div class="relative" style="padding-left: 2rem">
+            <!-- Vertical line -->
+            <div class="absolute top-0 bottom-0" style="left: 5px; width: 1px; background: linear-gradient(to bottom, var(--color-foreground), var(--color-border))"></div>
+            <!-- 2026 — latest, pulsing -->
+            <div class="relative pb-16" data-animate>
+              <div class="absolute" style="left: -2rem; top: 0.35rem">
+                <div style="width: 11px; height: 11px; border-radius: 50%; background: white; box-shadow: 0 0 8px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.3); animation: timeline-pulse 2s ease-in-out infinite"></div>
+              </div>
+              <p class="text-sm font-medium text-muted-foreground">2026</p>
+              <h3 class="mt-3 text-base font-semibold">AI-native from day one</h3>
+              <p class="mt-1 text-sm text-muted-foreground leading-relaxed">Every engagement now starts with AI-assisted discovery. We cut diagnostic time in half and deliver prototypes in weeks, not months.</p>
+            </div>
+            <!-- 2025 -->
+            <div class="relative pb-16" data-animate>
+              <div class="absolute" style="left: -2rem; top: 0.35rem">
+                <div style="width: 11px; height: 11px; border-radius: 50%; background: var(--color-muted-foreground)"></div>
+              </div>
+              <p class="text-sm font-medium text-muted-foreground">2025</p>
+              <h3 class="mt-3 text-base font-semibold">First enterprise clients</h3>
+              <p class="mt-1 text-sm text-muted-foreground leading-relaxed">Word spread. Two Fortune 500 companies brought us in to untangle cross-departmental workflows that had stalled for years.</p>
+            </div>
+            <!-- 2024 -->
+            <div class="relative pb-16" data-animate>
+              <div class="absolute" style="left: -2rem; top: 0.35rem">
+                <div style="width: 11px; height: 11px; border-radius: 50%; background: var(--color-muted-foreground)"></div>
+              </div>
+              <p class="text-sm font-medium text-muted-foreground">2024</p>
+              <h3 class="mt-3 text-base font-semibold">Core is founded</h3>
+              <p class="mt-1 text-sm text-muted-foreground leading-relaxed">Lisa and Sarah leave their roles to build the consultancy they always wished existed. First client within three weeks — a logistics company bleeding money on manual processes.</p>
+            </div>
+            <!-- 2022 -->
+            <div class="relative pb-16" data-animate>
+              <div class="absolute" style="left: -2rem; top: 0.35rem">
+                <div style="width: 11px; height: 11px; border-radius: 50%; background: var(--color-muted-foreground)"></div>
+              </div>
+              <p class="text-sm font-medium text-muted-foreground">2022</p>
+              <h3 class="mt-3 text-base font-semibold">The frustration crystallizes</h3>
+              <p class="mt-1 text-sm text-muted-foreground leading-relaxed">Both independently hit the same wall: brilliant consultants who delivered decks, not outcomes. They start talking about what "consulting that actually ships" would look like.</p>
+            </div>
+            <!-- 2018 -->
+            <div class="relative" data-animate>
+              <div class="absolute" style="left: -2rem; top: 0.35rem">
+                <div style="width: 11px; height: 11px; border-radius: 50%; background: var(--color-border)"></div>
+              </div>
+              <p class="text-sm font-medium text-muted-foreground">2018</p>
+              <h3 class="mt-3 text-base font-semibold">Lisa and Sarah meet</h3>
+              <p class="mt-1 text-sm text-muted-foreground leading-relaxed">A conference talk on developer experience sparks a conversation that never really ends. Different worlds — infrastructure and strategy — but the same conviction: build for users, not for org charts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pricing ===== -->
+    <section id="pricing">
+      <div id="pricing-gradient-wrap" class="mx-auto px-6" style="max-width: 1152px">
+        <div class="relative rounded-2xl py-[calc(48px+8vh)] px-6 overflow-hidden">
+          <div class="absolute inset-0" style="background: url('img/floral3.jpg') center/cover no-repeat"></div>
+          <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.65), transparent)"></div>
+      <div class="relative mx-auto max-w-5xl">
+        <div class="px-6 md:px-10">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-animate>
+            <!-- Heading -->
+            <div>
+              <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Simple, transparent pricing</h2>
+              <p class="mt-4 text-white/70 leading-relaxed">No hourly billing, no scope creep surprises. You know what you're paying before we start.</p>
+            </div>
+            <!-- Sprint Week -->
+            <div class="md:pt-12">
+            <div class="rounded-2xl bg-black overflow-hidden">
+              <div style="padding: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1)">
+                <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Sprint Week</p>
+                <div class="mt-4" style="display: flex; align-items: baseline; gap: 0.25rem">
+                  <span class="text-4xl font-bold tracking-tight">$20,000</span>
+                  <span class="text-sm text-muted-foreground">/ week</span>
+                </div>
+                <p class="mt-3 text-sm text-muted-foreground leading-relaxed">One focused week. One specific problem. We go from discovery to a working prototype, delivered Friday.</p>
+              </div>
+              <div style="padding: 2rem 2.5rem">
+                <ul style="display: flex; flex-direction: column; gap: 0.75rem; list-style: none; padding: 0; margin: 0">
+                  <li class="text-sm text-muted-foreground" style="display: flex; align-items: center; gap: 0.75rem">
+                    <svg style="width: 1rem; height: 1rem; flex-shrink: 0; color: white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    Lisa & Sarah, full week
+                  </li>
+                  <li class="text-sm text-muted-foreground" style="display: flex; align-items: center; gap: 0.75rem">
+                    <svg style="width: 1rem; height: 1rem; flex-shrink: 0; color: white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    Working prototype delivered
+                  </li>
+                  <li class="text-sm text-muted-foreground" style="display: flex; align-items: center; gap: 0.75rem">
+                    <svg style="width: 1rem; height: 1rem; flex-shrink: 0; color: white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    Full handover & documentation
+                  </li>
+                </ul>
+                <a href="#contact" class="mt-6 inline-flex items-center rounded-full border border-white/30 px-5 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors" style="display: inline-flex">Book a sprint</a>
+              </div>
+            </div>
+            </div>
+            <!-- Custom -->
+            <div class="md:pb-12">
+            <div class="rounded-2xl bg-black overflow-hidden">
+              <div style="padding: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1)">
+                <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Custom Engagement</p>
+                <div class="mt-4">
+                  <span class="text-4xl font-bold tracking-tight">Let's talk</span>
+                </div>
+                <p class="mt-3 text-sm text-muted-foreground leading-relaxed">Larger problems need more time. We scope custom engagements tailored to your organization — from two-week deep dives to quarter-long transformations.</p>
+              </div>
+              <div style="padding: 2rem 2.5rem">
+                <ul style="display: flex; flex-direction: column; gap: 0.75rem; list-style: none; padding: 0; margin: 0">
+                  <li class="text-sm text-muted-foreground" style="display: flex; align-items: center; gap: 0.75rem">
+                    <svg style="width: 1rem; height: 1rem; flex-shrink: 0; color: white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    Scoped to your specific challenge
+                  </li>
+                  <li class="text-sm text-muted-foreground" style="display: flex; align-items: center; gap: 0.75rem">
+                    <svg style="width: 1rem; height: 1rem; flex-shrink: 0; color: white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    Multi-week or multi-month timelines
+                  </li>
+                  <li class="text-sm text-muted-foreground" style="display: flex; align-items: center; gap: 0.75rem">
+                    <svg style="width: 1rem; height: 1rem; flex-shrink: 0; color: white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    Cross-department discovery included
+                  </li>
+                  <li class="text-sm text-muted-foreground" style="display: flex; align-items: center; gap: 0.75rem">
+                    <svg style="width: 1rem; height: 1rem; flex-shrink: 0; color: white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    Production-ready solutions, not reports
+                  </li>
+                  <li class="text-sm text-muted-foreground" style="display: flex; align-items: center; gap: 0.75rem">
+                    <svg style="width: 1rem; height: 1rem; flex-shrink: 0; color: white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    On-site or remote — we adapt to you
+                  </li>
+                  <li class="text-sm text-muted-foreground" style="display: flex; align-items: center; gap: 0.75rem">
+                    <svg style="width: 1rem; height: 1rem; flex-shrink: 0; color: white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    Full handover, documentation & training
+                  </li>
+                </ul>
+                <a href="#contact" class="mt-8 inline-flex items-center rounded-full border border-white/30 px-5 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors" style="display: inline-flex">Get in touch</a>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Contact ===== -->
-    <section id="contact" class="py-[calc(24px+4vh)]">
-      <div class="relative mx-auto max-w-2xl text-center rounded-2xl bg-black p-8 md:p-12" data-animate>
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Get in touch</h2>
-          <p class="mt-4 text-lg text-muted-foreground">Have a question or want to work with us? Drop us a message and we'll get back to you within 24 hours.</p>
+    <section id="contact" class="py-[calc(48px+8vh)]">
+      <div id="contact-card" class="relative mx-auto max-w-2xl text-center rounded-2xl bg-black p-8 md:p-12" style="box-shadow: 0 0 160px 60px rgba(100,100,100,0); transition: box-shadow 0.1s ease-out" data-animate>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Let's talk</h2>
+          <p class="mt-4 text-lg text-muted-foreground">Tell us what's not working. We'll tell you if we can help — honestly and quickly.</p>
           <form class="mt-10 space-y-6" action="#" method="post">
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div>
@@ -377,7 +537,7 @@
               <label for="message" class="block text-sm font-medium">Message</label>
               <textarea id="message" name="message" rows="4" required placeholder="Tell us about your project..." class="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-foreground resize-y"></textarea>
             </div>
-            <button type="submit" class="rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">Send message</button>
+            <button type="submit" class="rounded-full bg-white px-6 py-3 text-sm font-medium text-black hover:bg-white/90 transition-opacity">Send message</button>
           </form>
       </div>
     </section>
@@ -387,31 +547,19 @@
   <!-- ===== Footer ===== -->
   <footer class="border-t border-border py-12">
     <div class="mx-auto max-w-5xl px-6">
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="flex items-center justify-between">
         <!-- Brand -->
         <div>
           <a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight">
             <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1"/><circle cx="18" cy="10" r="9" stroke="currentColor" stroke-width="1"/></svg>
             Core
           </a>
-          <p class="mt-2 text-sm text-muted-foreground">The modern platform for teams who ship.</p>
+          <p class="mt-2 text-sm text-muted-foreground">AI consulting that builds, not just advises.</p>
         </div>
-        <!-- Product -->
-        <div>
-          <p class="text-sm font-semibold">Product</p>
-          <ul class="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li><a href="#features" class="hover:text-foreground transition-colors">Features</a></li>
-            <li><a href="#pricing" class="hover:text-foreground transition-colors">Pricing</a></li>
-            <li><a href="#faq" class="hover:text-foreground transition-colors">FAQ</a></li>
-          </ul>
-        </div>
-        <!-- Company -->
-        <div>
-          <p class="text-sm font-semibold">Company</p>
-          <ul class="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li><a href="#about" class="hover:text-foreground transition-colors">About</a></li>
-            <li><a href="legal.html" class="hover:text-foreground transition-colors">Legal</a></li>
-          </ul>
+        <!-- Legal links -->
+        <div class="flex items-center gap-6 text-sm text-muted-foreground">
+          <button type="button" data-open-dialog="modal-legal" class="hover:text-foreground transition-colors">Legal</button>
+          <button type="button" data-open-dialog="modal-privacy" class="hover:text-foreground transition-colors">Privacy</button>
         </div>
         <!-- Social -->
         <div>
@@ -427,10 +575,63 @@
         </div>
       </div>
       <div class="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground">
-        <p>&copy; 2026 Core Inc. All rights reserved.</p>
+        <p>Made by <a href="https://templatedeck.com" class="hover:text-foreground transition-colors">templatedeck.com</a></p>
       </div>
     </div>
   </footer>
+
+  <!-- ===== Legal Modal ===== -->
+  <dialog id="modal-legal" class="rounded-2xl bg-background text-foreground" style="position: fixed; inset: 0; margin: auto; width: calc(100% - 3rem); max-width: 42rem; max-height: 80vh; padding: 0; overflow: hidden; border: none; font-size: 1rem">
+    <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding: 1.5rem 3rem; flex-shrink: 0">
+      <h2 style="font-size: 1.5rem; font-weight: 700">Legal Notice</h2>
+      <button type="button" data-close-dialog style="color: var(--color-muted-foreground); cursor: pointer; background: none; border: none" aria-label="Close">
+        <svg style="width: 1.25rem; height: 1.25rem" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div style="overflow-y: auto; padding: 2rem 3rem 3rem; display: flex; flex-direction: column; gap: 2rem">
+      <div>
+        <h3 style="font-size: 1.25rem; font-weight: 600">Terms of Service</h3>
+        <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem; line-height: 1.75; color: var(--color-muted-foreground)">
+          <p>By accessing and using the Core platform ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you may not use the Service.</p>
+          <h4 style="font-weight: 600; color: var(--color-foreground); padding-top: 0.5rem">1. Account Registration</h4>
+          <p>You must provide accurate and complete information when creating an account. You are responsible for maintaining the security of your account credentials and for all activities that occur under your account.</p>
+          <h4 style="font-weight: 600; color: var(--color-foreground); padding-top: 0.5rem">2. Acceptable Use</h4>
+          <p>You agree not to use the Service for any unlawful purpose or in any way that could damage, disable, or impair the Service. You may not attempt to gain unauthorized access to any part of the Service or its related systems.</p>
+          <h4 style="font-weight: 600; color: var(--color-foreground); padding-top: 0.5rem">3. Payment Terms</h4>
+          <p>Paid plans are billed in advance on a monthly or annual basis. All fees are non-refundable except as expressly stated in our refund policy. We reserve the right to change pricing with 30 days notice.</p>
+          <h4 style="font-weight: 600; color: var(--color-foreground); padding-top: 0.5rem">4. Termination</h4>
+          <p>Either party may terminate this agreement at any time. Upon termination, your right to use the Service will immediately cease. We will make your data available for export for 30 days after termination.</p>
+        </div>
+      </div>
+      <hr style="border-color: var(--color-border)">
+      <div>
+        <h3 style="font-size: 1.25rem; font-weight: 600">Imprint</h3>
+        <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem; line-height: 1.75; color: var(--color-muted-foreground)">
+          <p><strong style="color: var(--color-foreground)">Core Inc.</strong><br>123 Innovation Drive<br>San Francisco, CA 94105<br>United States</p>
+          <p><strong style="color: var(--color-foreground)">Contact:</strong> hello@acme.example<br><strong style="color: var(--color-foreground)">Registration:</strong> Delaware, USA — File No. 12345678</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ===== Privacy Modal ===== -->
+  <dialog id="modal-privacy" class="rounded-2xl bg-background text-foreground" style="position: fixed; inset: 0; margin: auto; width: calc(100% - 3rem); max-width: 42rem; max-height: 80vh; padding: 0; overflow: hidden; border: none; font-size: 1rem">
+    <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding: 1.5rem 3rem; flex-shrink: 0">
+      <h2 style="font-size: 1.5rem; font-weight: 700">Privacy Policy</h2>
+      <button type="button" data-close-dialog style="color: var(--color-muted-foreground); cursor: pointer; background: none; border: none" aria-label="Close">
+        <svg style="width: 1.25rem; height: 1.25rem" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div style="overflow-y: auto; padding: 2rem 3rem 3rem; display: flex; flex-direction: column; gap: 1rem; line-height: 1.75; color: var(--color-muted-foreground)">
+      <p>Your privacy matters to us. This policy explains what data we collect, why we collect it, and how you can manage your information.</p>
+      <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--color-foreground); padding-top: 0.5rem">Data We Collect</h3>
+      <p>We collect information you provide directly (name, email, payment details) and data generated through your use of the Service (usage logs, device information, IP addresses).</p>
+      <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--color-foreground); padding-top: 0.5rem">How We Use Your Data</h3>
+      <p>We use your data to provide and improve the Service, process payments, send important notifications, and comply with legal obligations. We never sell your personal data to third parties.</p>
+      <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--color-foreground); padding-top: 0.5rem">Your Rights</h3>
+      <p>You have the right to access, correct, or delete your personal data at any time. You can export all your data from the dashboard or contact our support team for assistance.</p>
+    </div>
+  </dialog>
 
 </body>
 </html>
