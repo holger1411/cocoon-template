@@ -241,28 +241,7 @@
     });
   });
 
-  // ===== Contact Card Glow on Scroll =====
-  (function () {
-    var card = document.getElementById('contact-card');
-    if (!card) return;
-    var section = document.getElementById('contact');
-
-    function update() {
-      var rect = section.getBoundingClientRect();
-      var vh = window.innerHeight;
-      // Start: bottom of viewport hits top of section (rect.top <= vh)
-      // End: bottom of viewport hits bottom of section (rect.bottom <= vh)
-      var start = vh; // rect.top value when section top enters viewport bottom
-      var range = rect.height;
-      if (range <= 0) return;
-      var progress = Math.min(1, Math.max(0, (start - rect.top) / range));
-      var opacity = (progress * 0.4).toFixed(3);
-      card.style.boxShadow = '0 0 160px 60px rgba(100,100,100,' + opacity + ')';
-    }
-
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-  })();
+  // Contact Card — static shadow only (set in HTML inline style)
 
   // ===== Dialog Open / Close / Scroll Lock =====
   document.querySelectorAll('[data-open-dialog]').forEach(function (btn) {

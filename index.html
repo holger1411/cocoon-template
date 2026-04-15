@@ -8,16 +8,40 @@
 
   <!-- Favicon (replace with your own) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="apple-touch-icon" href="img/og-image.png">
+  <link rel="canonical" href="https://example.com/">
+  <link rel="manifest" href="manifest.json">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Core — AI Consulting that builds, not just advises">
   <meta property="og:description" content="Core is a two-person AI consultancy. We find the real problems, quantify them, and build working solutions.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://example.com">
-  <meta property="og:image" content="https://example.com/og-image.png">
+  <meta property="og:image" content="https://example.com/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Core — AI Consulting that builds, not just advises">
+  <meta name="twitter:image" content="https://example.com/img/og-image.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Core",
+    "url": "https://example.com",
+    "description": "AI consulting that builds, not just advises.",
+    "logo": "https://example.com/img/og-image.png",
+    "founder": [
+      { "@type": "Person", "name": "Lisa Bergmann", "jobTitle": "Co-founder & CTO" },
+      { "@type": "Person", "name": "Sarah Chen", "jobTitle": "Co-founder & CEO" }
+    ]
+  }
+  </script>
+
+  <!-- Font preload for critical rendering -->
+  <link rel="preload" href="fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Fonts are loaded via CSS @font-face -->
   <link rel="stylesheet" href="css/styles.css">
@@ -142,8 +166,8 @@
           <div>
             <h2 class="text-2xl font-medium tracking-tight sm:text-3xl">A new kind of consulting</h2>
             <div class="mt-6 flex items-center">
-              <img src="img/teammember 11.jpeg" alt="Lisa Bergmann" class="h-12 w-12 rounded-full object-cover ring-2 ring-background">
-              <img src="img/teammember3.jpeg" alt="Sarah Chen" class="h-12 w-12 rounded-full object-cover ring-2 ring-background -ml-3">
+              <img src="img/teammember11.webp" alt="Lisa Bergmann" width="1024" height="1024" loading="lazy" class="h-12 w-12 rounded-full object-cover ring-2 ring-background">
+              <img src="img/teammember3.webp" alt="Sarah Chen" width="1024" height="1024" loading="lazy" class="h-12 w-12 rounded-full object-cover ring-2 ring-background -ml-3">
             </div>
           </div>
           <div class="md:col-span-2">
@@ -162,7 +186,7 @@
     </section>
 
     <!-- ===== Trust / Logo Bar ===== -->
-    <section class="border-y border-border py-[calc(24px+4vh)]">
+    <section aria-label="Trusted by leading companies" class="border-y border-border py-[calc(24px+4vh)]">
       <div class="mx-auto max-w-5xl px-6">
         <div class="grid grid-cols-3 text-foreground" data-animate="fade">
           <!-- Arcline -->
@@ -205,7 +229,7 @@
             <p class="mt-4 text-muted-foreground leading-relaxed">We go querfeldein — across departments, hierarchies, and silos. Not the usual top-down workshop, but real immersion: talking to teams, observing processes, analyzing data. We surface the problems that everyone feels but nobody can articulate.</p>
           </div>
           <div class="relative rounded-2xl overflow-hidden h-80 md:h-96 flex items-center justify-center p-6 bg-black" data-fade-bg>
-            <div class="absolute inset-0 transition-opacity duration-100" style="background: url('img/floral1.jpg') center/cover no-repeat; opacity: 0.05"></div>
+            <div class="absolute inset-0 transition-opacity duration-100" style="background: url('img/floral1.webp') center/cover no-repeat; opacity: 0.05"></div>
             <div class="relative w-full max-w-[260px]">
               <div class="rounded-2xl bg-background p-5 border border-white/10">
                 <div class="flex items-center justify-between mb-5">
@@ -238,7 +262,7 @@
         <!-- Row 2: Image left, Text right — Uptime Monitor -->
         <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16" data-animate>
           <div class="relative rounded-2xl overflow-hidden h-80 md:h-96 flex items-center justify-center p-6 lg:order-none order-last bg-black" data-fade-bg>
-            <div class="absolute inset-0 transition-opacity duration-100" style="background: url('img/floral4.jpg') center/cover no-repeat; opacity: 0.05"></div>
+            <div class="absolute inset-0 transition-opacity duration-100" style="background: url('img/floral4.webp') center/cover no-repeat; opacity: 0.05"></div>
             <div class="relative w-full max-w-[260px]">
               <div class="rounded-2xl bg-background p-5 border border-white/10">
                 <div class="flex items-center justify-between mb-2">
@@ -273,7 +297,7 @@
             <p class="mt-4 text-muted-foreground leading-relaxed">This is where we're different. We don't stop at recommendations. We design the solution, build it, deploy it, and measure the results. Prototype, pilot, proof. Only then do we hand it over. No "you should probably do X" — we do X.</p>
           </div>
           <div class="relative rounded-2xl overflow-hidden h-80 md:h-96 flex items-center justify-center p-6 bg-black" data-fade-bg>
-            <div class="absolute inset-0 transition-opacity duration-100" style="background: url('img/floral7.jpg') center/cover no-repeat; opacity: 0.05"></div>
+            <div class="absolute inset-0 transition-opacity duration-100" style="background: url('img/floral7.webp') center/cover no-repeat; opacity: 0.05"></div>
             <div class="relative w-full max-w-[260px]">
               <div class="rounded-2xl bg-background p-5 border border-white/10">
                 <div class="flex items-center justify-between mb-1">
@@ -308,7 +332,7 @@
     <section id="team">
       <div id="faq-gradient-wrap" class="mx-auto px-6" style="max-width: 1152px">
         <div class="relative rounded-2xl py-[calc(48px+8vh)] px-6 overflow-hidden">
-          <div class="absolute inset-0" style="background: url('img/floral5.jpg') center/cover no-repeat"></div>
+          <div class="absolute inset-0" style="background: url('img/floral5.webp') center/cover no-repeat"></div>
           <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.85), transparent)"></div>
       <div class="relative mx-auto max-w-5xl">
         <div class="px-6 md:px-10">
@@ -323,7 +347,7 @@
             <!-- Lisa -->
             <div class="md:pt-12">
             <div class="rounded-2xl bg-black overflow-hidden">
-              <div class="bg-white aspect-square overflow-hidden"><img src="img/teammember 11.jpeg" alt="Lisa Bergmann" class="w-full h-full object-cover"></div>
+              <div class="bg-white aspect-square overflow-hidden"><img src="img/teammember11.webp" alt="Lisa Bergmann" width="1024" height="1024" loading="lazy" class="w-full h-full object-cover"></div>
               <div class="p-8 md:p-10">
                 <p class="text-sm font-semibold">Lisa Bergmann</p>
                 <p class="text-sm text-muted-foreground">Co-founder & CTO</p>
@@ -338,7 +362,7 @@
             <!-- Sarah -->
             <div class="md:pb-12">
             <div class="rounded-2xl bg-black overflow-hidden">
-              <div class="bg-white aspect-square overflow-hidden"><img src="img/teammember3.jpeg" alt="Sarah Chen" class="w-full h-full object-cover"></div>
+              <div class="bg-white aspect-square overflow-hidden"><img src="img/teammember3.webp" alt="Sarah Chen" width="1024" height="1024" loading="lazy" class="w-full h-full object-cover"></div>
               <div class="p-8 md:p-10">
                 <p class="text-sm font-semibold">Sarah Chen</p>
                 <p class="text-sm text-muted-foreground">Co-founder & CEO</p>
@@ -425,7 +449,7 @@
     <section id="pricing">
       <div id="pricing-gradient-wrap" class="mx-auto px-6" style="max-width: 1152px">
         <div class="relative rounded-2xl py-[calc(48px+8vh)] px-6 overflow-hidden">
-          <div class="absolute inset-0" style="background: url('img/floral3.jpg') center/cover no-repeat"></div>
+          <div class="absolute inset-0" style="background: url('img/floral3.webp') center/cover no-repeat"></div>
           <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.65), transparent)"></div>
       <div class="relative mx-auto max-w-5xl">
         <div class="px-6 md:px-10">
@@ -436,8 +460,8 @@
               <p class="mt-4 text-white/70 leading-relaxed">No hourly billing, no scope creep surprises. You know what you're paying before we start.</p>
             </div>
             <!-- Sprint Week -->
-            <div class="md:pt-12">
-            <div class="rounded-2xl bg-black overflow-hidden">
+            <div>
+            <div class="rounded-2xl bg-black overflow-hidden border border-border" style="background-image: radial-gradient(80% 50% at 50% 0%, rgb(26,26,26) 0%, transparent 70%)">
               <div style="padding: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1)">
                 <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Sprint Week</p>
                 <div class="mt-4" style="display: flex; align-items: baseline; gap: 0.25rem">
@@ -467,7 +491,7 @@
             </div>
             <!-- Custom -->
             <div class="md:pb-12">
-            <div class="rounded-2xl bg-black overflow-hidden">
+            <div class="rounded-2xl bg-black overflow-hidden border border-border" style="background-image: radial-gradient(80% 50% at 50% 0%, rgb(26,26,26) 0%, transparent 70%)">
               <div style="padding: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1)">
                 <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Custom Engagement</p>
                 <div class="mt-4">
@@ -515,7 +539,7 @@
 
     <!-- ===== Contact ===== -->
     <section id="contact" class="py-[calc(48px+8vh)]">
-      <div id="contact-card" class="relative mx-auto max-w-2xl text-center rounded-2xl bg-black p-8 md:p-12" style="box-shadow: 0 0 160px 60px rgba(100,100,100,0); transition: box-shadow 0.1s ease-out" data-animate>
+      <div id="contact-card" class="relative mx-auto max-w-2xl text-center rounded-2xl bg-black border border-border p-8 md:p-12" style="box-shadow: 0 -20px 50px -15px rgba(255,255,255,0.05); background-image: radial-gradient(80% 50% at 50% 0%, rgb(26,26,26) 0%, transparent 70%)" data-animate>
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Let's talk</h2>
           <p class="mt-4 text-lg text-muted-foreground">Tell us what's not working. We'll tell you if we can help — honestly and quickly.</p>
           <form class="mt-10 space-y-6" action="#" method="post">
@@ -565,10 +589,10 @@
         <div>
           <p class="text-sm font-semibold">Connect</p>
           <div class="mt-3 flex gap-4">
-            <a href="#" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
+            <a href="#" class="inline-flex items-center justify-center w-11 h-11 rounded-md text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
               <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </a>
-            <a href="#" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
+            <a href="#" class="inline-flex items-center justify-center w-11 h-11 rounded-md text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
               <svg aria-hidden="true" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
             </a>
           </div>

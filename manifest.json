@@ -1,0 +1,16 @@
+{
+  "name": "Core — AI Consulting",
+  "short_name": "Core",
+  "description": "AI consulting that builds, not just advises.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "img/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png"
+    }
+  ]
+}
