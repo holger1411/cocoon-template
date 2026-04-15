@@ -47,7 +47,7 @@
 
     var containers = [
       document.getElementById('hero-gradient-wrap'),
-      document.getElementById('faq-gradient-wrap'),
+      document.getElementById('team-gradient-wrap'),
       document.getElementById('pricing-gradient-wrap')
     ].filter(Boolean);
 
@@ -222,26 +222,6 @@
     }
   });
 
-  // ===== Carousel Keyboard Navigation =====
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var carousels = document.querySelectorAll('.carousel');
-
-    carousels.forEach(function (carousel) {
-      carousel.addEventListener('keydown', function (e) {
-        var scrollAmount = 320; // roughly one card width
-        if (e.key === 'ArrowRight') {
-          e.preventDefault();
-          carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        } else if (e.key === 'ArrowLeft') {
-          e.preventDefault();
-          carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        }
-      });
-    });
-  });
-
-  // Contact Card — static shadow only (set in HTML inline style)
 
   // ===== Dialog Open / Close / Scroll Lock =====
   document.querySelectorAll('[data-open-dialog]').forEach(function (btn) {

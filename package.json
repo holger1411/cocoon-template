@@ -1,8 +1,8 @@
 {
-  "name": "static-template-framework",
+  "name": "core-template",
   "version": "1.0.0",
   "private": true,
-  "description": "Reusable static HTML landing page template built on Tailwind CSS 4",
+  "description": "Dark one-page HTML template for consultancies and agencies. Tailwind CSS 4 + vanilla JS.",
   "scripts": {
     "dev": "concurrently \"npm run watch\" \"npm run serve\"",
     "build": "npx @tailwindcss/cli -i css/input.css -o css/styles.css --minify && npx terser js/main.js -o js/main.min.js -c -m",

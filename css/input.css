@@ -47,17 +47,6 @@ body {
   color: var(--color-foreground);
 }
 
-/* ===== Section Variants ===== */
-
-.section-muted {
-  background-color: var(--color-muted);
-}
-
-.section-inverted {
-  background-color: var(--color-accent);
-  color: var(--color-accent-foreground);
-}
-
 /* ===== Scroll Animations ===== */
 
 [data-animate] {
@@ -174,31 +163,3 @@ html:not(.js) [data-animate] {
   }
 }
 
-/* ===== Card Carousel ===== */
-
-.carousel {
-  scrollbar-width: none;
-}
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel:focus-visible {
-  outline: 2px solid var(--color-foreground);
-  outline-offset: 2px;
-  border-radius: 0.75rem;
-}
-
-/* ===== Image Placeholders ===== */
-
-.img-placeholder {
-  background-color: var(--color-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.img-placeholder svg {
-  color: var(--color-muted-foreground);
-  opacity: 0.5;
-}
