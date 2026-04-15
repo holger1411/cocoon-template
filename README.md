@@ -205,7 +205,9 @@ The agent reads `AGENTS.md` for the full technical context — file structure, C
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+This template is a **commercial product** by [templatedeck.com](https://templatedeck.com). See [LICENSE](LICENSE) for terms.
+
+Geist font files are licensed under the [SIL Open Font License 1.1](https://github.com/vercel/geist-font/blob/main/LICENSE.TXT).
 
 ---
 
