@@ -12,6 +12,7 @@
   "devDependencies": {
     "@tailwindcss/cli": "4.1.4",
     "browser-sync": "^3.0.3",
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "terser": "^5.46.1"
   }
 }
