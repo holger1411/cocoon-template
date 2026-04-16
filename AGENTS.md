@@ -1,4 +1,4 @@
-# AGENTS.md — Core Template
+# AGENTS.md — Cocoon Template
 
 > Context for AI coding agents working on this project.
 

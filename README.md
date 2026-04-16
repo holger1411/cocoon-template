@@ -1,8 +1,8 @@
-# Core — One-Page HTML Template
+# Cocoon — One-Page HTML Template
 
 A dark, modern one-page template for consultancies, agencies, and SaaS landing pages. Built with **Tailwind CSS 4** and vanilla JavaScript. No frameworks, no dependencies at runtime.
 
-**[Live Demo](https://core.templatedeck.com)**
+**[Live Demo](https://cocoon.templatedeck.com)**
 
 ## Quick Start
 
@@ -22,7 +22,7 @@ Opens a dev server at `http://localhost:3000` with live reload. Edit HTML, add n
 ## What's Included
 
 ```
-core-template/
+cocoon-template/
 ├── public/             ← READY TO USE — complete static site, no build needed
 │   ├── index.html      ← Edit text and images here if you don't need Tailwind
 │   ├── css/styles.css  ← Minified CSS
@@ -175,7 +175,7 @@ claude
 > "Install dependencies and start the dev server"
 
 **Change content:**
-> "Change the company name from Core to Nexus. Update the headline, meta tags, and footer."
+> "Change the company name from Cocoon to Nexus. Update the headline, meta tags, and footer."
 
 **Replace images:**
 > "Replace the team member photos with the images I put in img/new/. Convert them to WebP and update all references."

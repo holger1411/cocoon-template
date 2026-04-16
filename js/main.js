@@ -1,4 +1,4 @@
-/* ===== Core Template — main.js ===== */
+/* ===== Cocoon Template — main.js ===== */
 /* Handles: mobile navigation, scroll animations, carousel keyboard nav, hero ring glow */
 
 (function () {
