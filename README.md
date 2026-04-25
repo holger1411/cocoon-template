@@ -205,7 +205,9 @@ The agent reads `AGENTS.md` for the full technical context — file structure, C
 
 ## License
 
-This template is a **commercial product** by [templatedeck.com](https://templatedeck.com). See [LICENSE](LICENSE) for terms.
+Cocoon is **free and open source** under the [MIT License](LICENSE) — use it for personal or commercial projects, modify it, ship it. The only thing you can't do is resell the template "as-it-is" or republish it as a free template.
+
+Free download (with email) on [TemplateDeck](https://templatedeck.com/templates/cocoon).
 
 Geist font files are licensed under the [SIL Open Font License 1.1](https://github.com/vercel/geist-font/blob/main/LICENSE.TXT).
 
