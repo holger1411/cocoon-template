@@ -1,6 +1,6 @@
 {
   "name": "cocoon-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Dark one-page HTML template for consultancies and agencies. Tailwind CSS 4 + vanilla JS.",
   "scripts": {
